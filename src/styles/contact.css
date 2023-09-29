@@ -1,8 +1,56 @@
 .contactContainer{
     display: flex;
     flex-direction: row;
+    background-color: #bbbbbb;
+    padding: 3rem 2rem 3rem 2rem;
 }
 
 .contactMessage{
-    flex: 0 1 40%;
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.contactForm{
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactFormContainer{
+    position: relative;
+}
+
+.contactFormContainer > input{
+    width: 45%;
+    margin-right: 1rem;
+}
+
+.contactMessage > *{
+    color: var(--primary-text-color)
+}
+.contactMessage > p{
+    text-align: center;
+}
+
+.contactButton{
+    background-color: rgb(54, 54, 54);
+    color: rgb(242, 242, 242);
+    padding: .5rem 1rem;
+    width: 40%;
+    border: none;
+    transition: all .3s ease-in-out;
+}
+
+.contactButton:hover{
+    background-color: black;
+    transition: all .3s ease-in-out;
+}
+
+#contactInput{
+    position: absolute;
+    right: -15px;
+}
+

@@ -1,0 +1,84 @@
+.homeContainer{
+    min-height: 30vh;
+    display: flex;
+}
+
+.homeContainer > *{
+    padding: 1rem;
+}
+
+.companyMessage{
+    flex: 0 0 60%;
+    flex-direction: column;
+    display: flex;
+}
+
+.getQuote{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.companyMessage h2{
+    white-space: nowrap; 
+    align-self: center;
+}
+
+.formContainer {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .formHeader {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .formInput {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .formDropdown {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .formTextarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .formButton{
+    background-color: var(--primary-dark-blue) !important;
+    color: white;
+    border: 2px solid white;
+    transition: all .5s ease-in-out;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+  .formButton:hover{
+    background-color: white !important;
+    color: var(--primary-dark-blue) !important;
+    border: 2px solid var(--primary-dark-blue) !important;
+    transition: all .5s ease-in-out;
+}
+
+    #formCheckbox{
+        margin-left: 1rem;
+    }

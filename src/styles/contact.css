@@ -1,0 +1,8 @@
+.contactContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.contactMessage{
+    flex: 0 1 40%;
+}

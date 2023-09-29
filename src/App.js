@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { Home } from "./components/Home";
 import { Flavors } from "./components/Flavors";
 import { FlavorsCategory } from "./components/FlavorsCategory";
-import { Navbar } from "./components/Navbar";
+import { Navigation } from "./components/navbarFiles/Navigation";
 import { Error404 } from "./components/Error404";
 
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Navbar/>
+        <Navigation/>
           <Routes>
             <Route path="/" element={<Home/>}/>
                 <Route path="flavors" element={<Flavors />} />

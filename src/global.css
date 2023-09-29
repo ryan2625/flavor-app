@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+
+a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+}
+
+ul {
+    margin-bottom: 0rem;
+    list-style: none;
+}
+
+  :root {
+    --primary-text-color: #333333;
+    --primary-background-color: #CCCCCC;
+    --primary-dark-blue: #326295;
+  }

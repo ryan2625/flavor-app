@@ -3,7 +3,7 @@ const Flavor = require("../models/flavor")
 //GET all flavors
 const getFlavors = async(req, res) => {
     try{
-    const flavors = await Flavor.find({})
+    const flavors = await Flavor.distinct("flavorName")
     res.status(200).json(flavors)
 } catch (error) {
     throw error;
@@ -22,10 +22,12 @@ const getCategories = async(req, res) => {
 }
 
 //GET all flavors in a category
-async function getFlavorsByCategory(category) {
+const getFlavorsByCategory = async (req, res) => {
+  const category = req.params.category;
+  console.log(category)
     try {
       const flavors = await Flavor.find({ category: category }, 'flavorName');
-      return flavors;
+      res.status(200).json(flavors)
     } catch (error) {
       throw error;
     }

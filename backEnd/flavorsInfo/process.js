@@ -11,7 +11,7 @@ async function readStream(){
     try {
         await Flavor.create({ number, category, flavorName });
     } catch(error) {
-        console.log("ERROR LOCATION 1" + error.message);
+        console.log("ERROR LOCATION 1: " + error.message);
     }
     })
     .on("error", function (error) {

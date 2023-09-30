@@ -61,7 +61,7 @@ export const Home = () => {
           value={formData.email}
           onChange={handleInputChange}/>
           <select className="formDropdown">
-            <option value={formData.capability} disabled selected>Select a capability</option>
+            <option value={formData.capability} disabled>Select a capability</option>
             <option value="Option 1">Design</option>
             <option value="Option 2">Production</option>
             <option value="Option 3">Certification</option>

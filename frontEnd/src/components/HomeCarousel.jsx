@@ -23,7 +23,7 @@ export const HomeCarousel = () => {
             />
             <Carousel.Caption>
               <h3>CERTIFICATION</h3>
-              <p>EMBRACE INNOVATION IN MOTION.</p>
+              <p>DISCOVER MORE</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -35,7 +35,7 @@ export const HomeCarousel = () => {
   
             <Carousel.Caption>
               <h3>PRODUCTION</h3>
-              <p>THREE ROWS. ZERO COMPROMISE.</p>
+              <p>DISCOVER MORE</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -47,7 +47,7 @@ export const HomeCarousel = () => {
   
             <Carousel.Caption>
               <h3>DESIGN</h3>
-              <p>THREE ROWS. ZERO COMPROMISE.</p>
+              <p>DISCOVER MORE</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

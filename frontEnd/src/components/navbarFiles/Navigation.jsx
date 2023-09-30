@@ -36,6 +36,11 @@ export const Navigation = () => {
       </Link>
       <nav>
         <ul>
+        <li className='hoverLink'>
+            <Link to="/">
+              Home
+            </Link>
+          </li>
           <li>    
             <NavDropdown title="Capabilities">
               <NavDropdown.Item href="">
@@ -48,7 +53,6 @@ export const Navigation = () => {
                 Certification
               </NavDropdown.Item>
             </NavDropdown>
-
           </li>
           <li>
           <NavDropdown title="Flavors">

@@ -3,7 +3,11 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const flavorSchema = new Schema({
-    name: {
+    number : {
+        type: Number,
+        required: true
+    },
+    flavorName: {
         type: String,
         required: true
     },
@@ -12,3 +16,5 @@ const flavorSchema = new Schema({
         required: true
     }
 })
+
+module.exports = mongoose.model("Flavor", flavorSchema)

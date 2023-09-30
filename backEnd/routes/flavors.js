@@ -1,17 +1,20 @@
 const express = require("express")
+const readStream = require("../flavorsInfo/process")
+
+const {
+    getFlavors,
+    getCategories,
+    getFlavorsByCategory
+} = require("../controllers/flavorController")
 
 const router =  express.Router()
 
-router.get("/", (req, res) =>{
-    res.json({mssg:"GET ALL FLAVORS"})
-})
+router.get("/", getFlavors)
 
-router.get("/categories", (req, res) =>{           
-    res.json({mssg:"GET ALL CATEGORIES"})
-})
+router.get("/categories", getCategories)
 
-router.get("/:category", (req, res) =>{
-    res.json({mssg:"FLAVORS IN CATEGORY"})
-}
-)
+router.get("/:category", getFlavorsByCategory)
+
+router.post("/", readStream)
+
 module.exports = router

@@ -6,14 +6,14 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import favicon from "./favicon.png"
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export const Footer = () => {
 
-    const yearString = new Date().getFullYear().toString();
+    const [yearString, setYearString] = useState(null)
 
     useEffect(() => {
-        console.log(yearString);
+        setYearString(new Date().getFullYear().toString());
       }, []);
 
   return (

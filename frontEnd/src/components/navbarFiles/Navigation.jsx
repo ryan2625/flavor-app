@@ -17,11 +17,9 @@ export const Navigation = () => {
         if (response.ok) {
           const categoriesArray = await response.json();
           setCategories(categoriesArray);
-          console.log("Value: " + categoriesArray);
         } else {
           console.log(`Failed to fetch categories. Status: ${response.status}`);
         }
-        console.log("Use effect running");
       } catch (error) {
         console.log(error);
       }
@@ -56,7 +54,7 @@ export const Navigation = () => {
           <NavDropdown title="Flavors">
               {categories && categories.map((category) => (
                 link = `/flavors/${category}`,
-                <NavDropdown.Item href={link}>
+                <NavDropdown.Item href={link} key={category}>
                   {category}
                 </NavDropdown.Item>
               ))}

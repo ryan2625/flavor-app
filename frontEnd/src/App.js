@@ -7,6 +7,7 @@ import { Error404 } from "./components/Error404";
 import { Footer } from "./components/footerFiles/Footer";
 
 
+
 function App() {
   return (
     <div>
@@ -14,7 +15,7 @@ function App() {
         <Navigation/>
           <Routes>
             <Route path="/" element={<Home/>}/>
-                <Route path="flavorsCategory" element={<FlavorsCategory />} />
+                <Route path="categories" element={<FlavorsCategory />} />
                 <Route path="flavors/:category" element={<Flavors />} />
                 <Route path="*" element={<Error404 />} />
           </Routes>

@@ -9,13 +9,11 @@ export const Flavors = () => {
   const [flavors, setFlavors] = useState(null)
 
   useEffect(() => {
-    console.log("CATEGORY VAL: " + category);
     const fetchCategoryFlavor = async () => {
       try {
         const response = await fetch(`http://localhost:4000/api/flavors/${category}`);
         if (response.ok) {
           const flavorArray = await response.json();
-          console.log(flavorArray)
           setFlavors(flavorArray);
         } else {
           console.log(`Failed to fetch categories. Status: ${response.status}`);

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import "./../../styles/navbar.css"
 import logo from "./logo.png"
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export const Navigation = () => {
@@ -52,6 +52,9 @@ export const Navigation = () => {
           </li>
           <li>
           <NavDropdown title="Flavors">
+          <NavDropdown.Item href= "/categories">
+            All Categories
+          </NavDropdown.Item>
               {categories && categories.map((category) => (
                 link = `/flavors/${category}`,
                 <NavDropdown.Item href={link} key={category}>
@@ -60,8 +63,16 @@ export const Navigation = () => {
               ))}
           </NavDropdown>
           </li>
-          <li className='hoverLink'><Link>About us</Link></li>
-          <li className='hoverLink'><Link>Contact Us</Link></li>
+          <li className='hoverLink'>
+            <Link to="/">
+              About us
+            </Link>
+          </li>
+          <li className='hoverLink'>
+          <Link to={{ pathname: '/', search: '?source=contact' }}>
+              Contact Us
+            </Link>
+          </li>
         </ul>
       </nav>
       </div>

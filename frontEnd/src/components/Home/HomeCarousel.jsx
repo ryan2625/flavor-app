@@ -14,7 +14,7 @@ export const HomeCarousel = () => {
   ]
 
   return (
-    <Carousel interval={50000} slide={5000}>
+    <Carousel interval={5000} slide={5000}>
           <Carousel.Item>
             <img
               className="d-block w-100"

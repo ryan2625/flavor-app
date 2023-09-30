@@ -1,5 +1,5 @@
 const express = require("express")
-const readStream = require("../flavorsInfo/process")
+const readStream = require("../parseCsv/process")
 
 const {
     getFlavors,
@@ -16,5 +16,7 @@ router.get("/categories", getCategories)
 router.get("/:category", getFlavorsByCategory)
 
 router.post("/", readStream)
+
+
 
 module.exports = router

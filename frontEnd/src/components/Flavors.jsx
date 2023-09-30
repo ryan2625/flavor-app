@@ -28,12 +28,28 @@ export const Flavors = () => {
     fetchCategoryFlavor()
   }, []);
   
-  return (<>
-    <div className=''>
-      
-    </div>
-    <GetQuote />
+  return (
+    <>
+      <div className='categoryContainer'>
+        <div className="categoryFlavors">
+        <h1 className="categoryHeader">
+          All {category} Flavors
+        </h1>
+          {flavors && flavors.map((flavor, index) => (
+            <div className="individualFlavors" key={index}> 
+              <ul>
+                <li>
+                  {flavor.flavorName}
+                </li>
+              </ul>
+            </div>
+          ))}
+        </div> 
+        <div className="quoteBox">
+          <GetQuote />
+        </div>
+      </div> 
     </>
-  )
+  );
 }
 

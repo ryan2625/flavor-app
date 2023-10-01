@@ -1,77 +1,79 @@
-.displayCategoryContainer{
-    display: flex;
-    flex-direction: row;
+/*CSS for the flavors category component*/
+
+.displayCategoryContainer {
+  display: flex;
+  flex-direction: row;
 }
 
 .flavorsCategory {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex: 0 0 60%;
-    margin: 3rem;
-  }
-  
-  .categoryItem {
-    width: 400px;
-    height: 150px;
-    border: 1px solid rgb(0, 0, 0); 
-    border-radius: 30px;
-    padding: 1rem;
-    margin: 1rem;
-    white-space: nowrap;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: box-shadow 0.3s ease-in-out; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-    transform: skew(-10deg);
-  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 0 60%;
+  margin: 3rem;
+}
 
-  .categoryItem h3{
-    color: rgb(255, 255, 255);
-    padding: .5rem;
-    border-radius: 5px;
-    backdrop-filter: blur(5px) brightness(65%); 
-  }
+.categoryItem {
+  width: 400px;
+  height: 150px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 30px;
+  padding: 1rem;
+  margin: 1rem;
+  white-space: nowrap;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  transform: skew(-10deg);
+}
 
-  .categoryItem:hover{
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
-  }
+.categoryItem h3 {
+  color: rgb(255, 255, 255);
+  padding: .5rem;
+  border-radius: 5px;
+  backdrop-filter: blur(5px) brightness(65%);
+}
 
-  #categoryQuote{
-    position: fixed;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(50%, -50%);
+.categoryItem:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#categoryQuote {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, -50%);
 }
 
 @media (max-width: 1500px) {
-  .categoryItem{
-    width: 300px;
-    height: 113px;
+  .categoryItem {
+      width: 300px;
+      height: 113px;
   }
 
-  .categoryItem h3{
-    font-size: small;
+  .categoryItem h3 {
+      font-size: small;
   }
 }
 
 @media (max-width: 1190px) {
-  .flavorsCategory{
-    margin: 1rem;
-    justify-content: center;
+  .flavorsCategory {
+      margin: 1rem;
+      justify-content: center;
   }
 
-  .displayCategoryContainer{
-    flex-direction: column;
+  .displayCategoryContainer {
+      flex-direction: column;
   }
 
-  #categoryQuote{
-    position: relative;
-    top: 0; 
-    left: 0; 
-    transform: translate(0%, 0%);
-    margin-bottom: 2rem;
+  #categoryQuote {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0%, 0%);
+      margin-bottom: 2rem;
   }
 }

@@ -1,41 +1,45 @@
-.contactContainer{
+/*CSS for the contact form component*/
+ 
+
+.contactContainer {
     display: flex;
     flex-direction: row;
     background-color: #bbbbbb;
     padding: 3rem 2rem 3rem 2rem;
 }
 
-.contactMessage{
+.contactMessage {
     flex: 0 0 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.contactForm{
+.contactForm {
     flex: 0 0 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.contactFormContainer{
+.contactFormContainer {
     position: relative;
 }
 
-.contactFormContainer > input{
+.contactFormContainer > input {
     width: 45%;
     margin-right: 1rem;
 }
 
-.contactMessage > *{
+.contactMessage > * {
     color: var(--primary-text-color)
 }
-.contactMessage > p{
+
+.contactMessage > p {
     text-align: center;
 }
 
-.contactButton{
+.contactButton {
     background-color: rgb(54, 54, 54);
     color: rgb(242, 242, 242);
     padding: .5rem 1rem;
@@ -44,42 +48,41 @@
     transition: all .3s ease-in-out;
 }
 
-.contactButton:hover{
+.contactButton:hover {
     background-color: black;
     transition: all .3s ease-in-out;
 }
 
-#contactInput{
+#contactInput {
     position: absolute;
     right: -15px;
 }
 
 @media (max-width: 1020px) {
-    .contactContainer{
+    .contactContainer {
         flex-direction: column;
         align-items: center;
     }
-    
-    .contactMessage{
-        order: -1; 
+
+    .contactMessage {
+        order: -1;
         margin-bottom: 1rem;
         width: 60%;
     }
 
-    .contactUs{
+    .contactUs {
         text-decoration: underline;
     }
 
-    .contactButton{
+    .contactButton {
         width: 100%;
         margin-top: 1rem;
     }
-    
 }
 
-@media (max-width: 410px){
+@media (max-width: 410px) {
     
-    .formContainer{
+    .formContainer {
         display: flex;
         flex-direction: column;
         align-items: center;

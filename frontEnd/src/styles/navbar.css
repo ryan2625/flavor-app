@@ -1,3 +1,7 @@
+/**
+*CSS for the navbar component
+*/
+
 nav li {
     margin: 1.5rem;
     position: relative;
@@ -15,7 +19,6 @@ nav li {
 .navContainer ul {
     display: flex;
 }
-
 
 .navContainer {
     display: flex;
@@ -53,10 +56,6 @@ nav li {
 .mobileContainer {
     display: none;
 }
-
-
-
-
 
 @media (max-width:992px) {
     .navContainer {
@@ -160,31 +159,32 @@ nav li {
     }
 }
 
-    @media (max-width: 560px){
+@media (max-width: 560px) {
 
-        .dropdown-menu{
-            position: relative !important;
-            width: 100%;
-        }
-
-        .dropdown-menu.show{
-            transform: translate(0px, 0px) !important;
-        }
-        .dropdown-item{
-            z-index: 10000;
-            color: red;
-        }
-
-        nav li{
-            display: flex;
-        }
-
-        .openMenu nav{
-            max-width: 280px;
-        }
-
-        .openMenu{
-            height: auto;
-            min-height: 100vh;
-        }
+    .dropdown-menu {
+        position: relative !important;
+        width: 100%;
     }
+
+    .dropdown-menu.show {
+        transform: translate(0px, 0px) !important;
+    }
+
+    .dropdown-item {
+        z-index: 10000;
+        color: red;
+    }
+
+    nav li {
+        display: flex;
+    }
+
+    .openMenu nav {
+        max-width: 280px;
+    }
+
+    .openMenu {
+        height: auto;
+        min-height: 100vh;
+    }
+}

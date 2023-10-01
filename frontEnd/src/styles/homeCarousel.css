@@ -1,12 +1,14 @@
+/*CSS for the Slider component*/
+
 .carousel-caption > p,
-.carousel-caption > h3  {
+.carousel-caption > h3 {
     animation: fadeIn 1.5s ease-in;
     color: var( --primary-text-color);
 }
 
-.carousel-caption{
-    background: rgba(255, 255, 255, 0.5); 
-    backdrop-filter: blur(5px); 
+.carousel-caption {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
     border-radius: 20px;
     padding-bottom: 0rem !important;
     position: absolute;
@@ -20,27 +22,28 @@
     width: 30% !important;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon  {
-    background: rgba(255, 255, 255, 0.5); 
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
-    border-radius: 50%; 
+    border-radius: 50%;
     padding: 2rem;
 }
 
-.carousel{
+.carousel {
     border-radius: 20px;
 }
 
 @keyframes fadeIn {
     0% {
-      opacity: 0; 
+        opacity: 0;
     }
-    100% {
-      opacity: 1; 
-    }
-  }
 
-  @media (max-width: 630px){
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 630px) {
     .sliderLinks > p,
     .sliderLinks > h3 {
         font-size: x-small;
@@ -52,4 +55,3 @@
         transform: scale(.5);
     }
 }
-  

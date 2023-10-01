@@ -2,11 +2,16 @@
 
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+/**
+*Global styles. I import bootstrap at the top so all files have access to its clases and
+*import a special font that I thought was suitible.
+*/
+
 body {
     font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
-  }
+}
 
 a {
     text-decoration: none;
@@ -18,16 +23,15 @@ ul {
     list-style: none;
 }
 
-.setMobileMenu{
-  max-height: 100vh;
-  overflow: hidden;
+.setMobileMenu {
+    max-height: 100vh;
+    overflow: hidden;
 }
 
-  :root {
+/*Defining global variables for css colors*/
+
+:root {
     --primary-text-color: #333333;
     --primary-background-color: #CCCCCC;
     --primary-dark-blue: #326295;
-    --sm: 576px;
-    --md: 768px;
-    --lg: 1020px;
-  }
+}

@@ -1,23 +1,40 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import "./../../styles/navbar.css"
-import logo from "./logo.png"
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { Menu } from '@mui/material';
+import logo from './logo.png';
+import './../../styles/navbar.css';
 
-export const Navigation = ({status, setStatus}) => {
+/**
+ * Navigation Component
+ *
+ * This component represents the navigation bar and manages the mobile menu's status.
+ * It can communicate with App.js to inform whether the mobile menu is open or closed.
+ * It also fetches the categories from the backend and renders them in the navigation bar
+ * dropdown and mobile menu dropdown
+ * 
+ */
+export const Navigation = ({ status, setStatus }) => {
+  
+  /*Defining a variable to hold the href in the nav drop down menu*/
 
   let link;
 
+  /* 
+  *This function sets the status state, which determines whether the mobile menu is open or closed.
+  */
+
   function handleBurgerClick() {
     setStatus(!status);
-    console.log("Setting status...")
   }
 
-  const [categories, setCategories] = useState(null)
+  /**
+   * This use effect fetches all the categories from the backend and saves them in the categories state,
+   * then dynamically renders them in the drop down menu.
+   */
+
+  const [categories, setCategories] = useState(null);
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -32,107 +49,114 @@ export const Navigation = ({status, setStatus}) => {
         console.log(error);
       }
     };
-  
-    fetchCategories(); 
+
+    fetchCategories();
   }, []);
 
-  return (
+  return ( 
+    /*Desktop navbar*/
     <div className="browserMobileNav">
       <div className="navContainer">
-        <Link id='logoLink' to="/">
+        <Link id="logoLink" to="/">
           <img src={logo} alt="Company Logo" />
         </Link>
         <nav>
           <ul>
-            <li className='hoverLink'>
-              <Link to="/">
-                Home
-              </Link>
+            <li className="hoverLink">
+              <Link to="/">Home</Link>
             </li>
-            <li>    
+            <li>
               <NavDropdown title="Capabilities">
-                <NavDropdown.Item href="design">
-                  Design
-                </NavDropdown.Item>
-                <NavDropdown.Item href="production">
-                  Production
-                </NavDropdown.Item>
-                <NavDropdown.Item href="certification">
-                  Certification
-                </NavDropdown.Item>
+                <NavDropdown.Item href="design">Design</NavDropdown.Item>
+                <NavDropdown.Item href="production">Production</NavDropdown.Item>
+                <NavDropdown.Item href="certification">Certification</NavDropdown.Item>
               </NavDropdown>
             </li>
             <li>
               <NavDropdown title="Flavors">
-                <NavDropdown.Item href="/categories">
-                  All Categories
-                </NavDropdown.Item>
-                {categories && categories.map((category) => (
-                  link = `/flavors/${category}`,
-                  <NavDropdown.Item href={link} key={category}>
-                    {category}
-                  </NavDropdown.Item>
-                ))}
+
+              {/*Here we dynamically render the flavor categories, and set each category with its respective link*/}
+
+                <NavDropdown.Item href="/categories">All Categories</NavDropdown.Item>
+                {categories &&
+                  categories.map(
+                    (category) => (
+                      (link = `/flavors/${category}`),
+                      (
+                        <NavDropdown.Item href={link} key={category}>
+                          {category}
+                        </NavDropdown.Item>
+                      )
+                    )
+                  )}
               </NavDropdown>
             </li>
-            <li className='hoverLink'>
-              <Link to="/">
-                About us
-              </Link>
+            <li className="hoverLink">
+              <Link to="/">About us</Link>
             </li>
-            <li className='hoverLink'>
-              <Link to={{ pathname: '/', search: '?source=contact' }}>
-                Contact Us
-              </Link>
+            <li className="hoverLink">
+
+            {/*This link saves the search params. This is used to automatically scroll to the contact component on the home page. See: Home page*/}
+
+              <Link to={{ pathname: '/', search: '?source=contact' }}>Contact Us</Link>
             </li>
           </ul>
         </nav>
       </div>
 
-      
+      {/* Mobile navbar version... */}
+
       <div className="mobileContainer">
-        <Link id='logoLink' to="/">
+        <Link id="logoLink" to="/">
           <img src={logo} alt="Company Logo" />
         </Link>
         <div className="menuStatus">
-          <div className={status ? "burgerIcon closed" : "burgerIcon  open"} onClick={handleBurgerClick}>
+          <div
+            className={status ? 'burgerIcon closed' : 'burgerIcon open'}
+            onClick={handleBurgerClick}
+          >
             <MenuIcon />
           </div>
-          <div className={status ? "burgerIcon open" : "burgerIcon closed"} onClick={handleBurgerClick}>
+          <div
+            className={status ? 'burgerIcon open' : 'burgerIcon closed'}
+            onClick={handleBurgerClick}
+          >
             <CloseIcon />
           </div>
-          <div className={status ? "openMenu" : "closed"}>
+          <div className={status ? 'openMenu' : 'closed'}>
             <nav>
-              <ul className='mobileNavUl'>
-                <li >
+              <ul className="mobileNavUl">
+                <li>
                   <Link to="/" onClick={handleBurgerClick}>
                     Home
                   </Link>
                 </li>
-                <li>    
+                <li>
                   <NavDropdown title="Capabilities">
-                    <NavDropdown.Item href="design">
-                      Design
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="production">
-                      Production
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="certification">
-                      Certification
-                    </NavDropdown.Item>
+                    <NavDropdown.Item href="design">Design</NavDropdown.Item>
+                    <NavDropdown.Item href="production">Production</NavDropdown.Item>
+                    <NavDropdown.Item href="certification">Certification</NavDropdown.Item>
                   </NavDropdown>
                 </li>
                 <li>
                   <NavDropdown title="Flavors">
-                    <NavDropdown.Item href="/categories">
-                      All Categories
-                    </NavDropdown.Item>
-                    {categories && categories.map((category) => (
-                      link = `/flavors/${category}`,
-                      <NavDropdown.Item href={link} key={category} onClick={handleBurgerClick}>
-                        {category}
-                      </NavDropdown.Item>
-                    ))}
+
+                    <NavDropdown.Item href="/categories">All Categories</NavDropdown.Item>
+                    {categories &&
+                      categories.map(
+                        (category) => (
+                          (link = `/flavors/${category}`),
+                          (
+                            <NavDropdown.Item
+                              href={link}
+                              key={category}
+                              onClick={handleBurgerClick}
+                            >
+                              {category}
+                            </NavDropdown.Item>
+                          )
+                        )
+                      )}
                   </NavDropdown>
                 </li>
                 <li>
@@ -141,7 +165,11 @@ export const Navigation = ({status, setStatus}) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to={{ pathname: '/', search: '?source=contact' }} onClick={handleBurgerClick}>
+
+                  <Link
+                    to={{ pathname: '/', search: '?source=contact' }}
+                    onClick={handleBurgerClick}
+                  >
                     Contact Us
                   </Link>
                 </li>
@@ -151,5 +179,5 @@ export const Navigation = ({status, setStatus}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

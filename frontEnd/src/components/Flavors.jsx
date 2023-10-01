@@ -1,16 +1,36 @@
-import React, { useState, useEffect } from 'react'
-import "../styles/flavors.css"
-import { GetQuote } from './GetQuote'
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { GetQuote } from './GetQuote';
+import '../styles/flavors.css';
+
+/**
+ * Flavors Component
+ *
+ * This component dynamically renders different flavors associated with a specific category path. It makes a GET
+ * request to the backend at the path /flavors/:category. It then renders the flavors associated with that category.
+ * 
+ */
 
 export const Flavors = () => {
 
   const { category } = useParams();
-  const [flavors, setFlavors] = useState(null)
+  const [flavors, setFlavors] = useState(null);
+
+/**
+ * This useEffect hook scrolls the page to the top of the page when the component mounts. this ensures the user does
+ * not enter into a route with the page scrolled down.
+ */
 
   useEffect(() => {
-    window.scrollTo(0, 0); 
-  }, );
+    window.scrollTo(0, 0);
+  }, []);
+
+  /** 
+   *  
+   *  This useEffect hook makes a GET request to the backend at the path /flavors/:category. It then renders the flavors
+   *  associated with that category.
+   * 
+  */
 
   useEffect(() => {
     const fetchCategoryFlavor = async () => {
@@ -27,31 +47,27 @@ export const Flavors = () => {
       }
     };
 
-    fetchCategoryFlavor()
+    fetchCategoryFlavor();
   }, []);
-  
+
   return (
     <>
-      <div className='categoryContainer'>
+      <div className="categoryContainer">
         <div className="categoryFlavors">
-        <h1 className="categoryHeader">
-          All {category} Flavors
-        </h1>
-          {flavors && flavors.map((flavor, index) => (
-            <div className="individualFlavors" key={index}> 
-              <ul>
-                <li>
-                  {flavor.flavorName}
-                </li>
-              </ul>
-            </div>
-          ))}
-        </div> 
+          <h1 className="categoryHeader">All {category} Flavors</h1>
+          {flavors &&
+            flavors.map((flavor, index) => (
+              <div className="individualFlavors" key={index}>
+                <ul>
+                  <li>{flavor.flavorName}</li>
+                </ul>
+              </div>
+            ))}
+        </div>
         <div className="quoteBox" id="flavorQuote">
           <GetQuote />
         </div>
-      </div> 
+      </div>
     </>
   );
-}
-
+};

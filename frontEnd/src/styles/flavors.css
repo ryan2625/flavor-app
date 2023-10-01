@@ -1,17 +1,19 @@
-.categoryContainer{
+/*CSS for the flavors component*/
+
+.categoryContainer {
     padding: 2rem;
     display: flex;
     min-height: 100vh;
 }
 
-.categoryContainer > div:nth-of-type(2){
+.categoryContainer > div:nth-of-type(2) {
     position: fixed;
-    top: 50%; 
-    left: 50%; 
+    top: 50%;
+    left: 50%;
     transform: translate(50%, -50%);
 }
 
-.categoryFlavors{
+.categoryFlavors {
     flex: 0 0 60%;
     display: flex;
     flex-direction: row;
@@ -19,49 +21,48 @@
     justify-content: center;
 }
 
-.categoryFlavors > div{
+.categoryFlavors > div {
     flex: 0 0 30%;
 }
 
-.individualFlavors{
+.individualFlavors {
     display: block;
     border: 1px solid black;
     border-radius: 10px;
     padding: .5rem
 }
 
-.individualFlavors li{
-    list-style:circle;
+.individualFlavors li {
+    list-style: circle;
 }
 
-.individualFlavors:hover{
+.individualFlavors:hover {
     background-color: #dedede;
     cursor: pointer;
 }
 
-.categoryHeader{
+.categoryHeader {
     width: 100%;
     text-decoration: underline;
     text-align: center;
 }
 
-
 @media (max-width: 1190px) {
-    .categoryFlavors{
-      margin: 1rem;
-      justify-content: center;
-      margin-bottom: 2rem;
+    .categoryFlavors {
+        margin: 1rem;
+        justify-content: center;
+        margin-bottom: 2rem;
     }
-  
-    .categoryContainer{
-      flex-direction: column;
+
+    .categoryContainer {
+        flex-direction: column;
     }
-  
-    #flavorQuote{
-      position: relative;
-      top: 0; 
-      left: 0; 
-      transform: translate(0%, 0%);
-      margin-bottom: 2rem;
+
+    #flavorQuote {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+        margin-bottom: 2rem;
     }
-  }
+}

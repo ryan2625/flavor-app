@@ -1,28 +1,35 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema
+/**
+ * Quote Model
+ *
+ * This module defines the Mongoose schema and model for storing quote information in the database.
+ * 
+ */
+
+const Schema = mongoose.Schema;
 
 const quoteSchema = new Schema({
-    name:{
-        type: String,
-        required: true
-    },
-    email:{
-        type: String,
-        required: true
-    },
-    capability: {
-        type: String,
-        required: true
-    },
-    message: {
-        type: String,
-        required: true
-    },
-    updates: {
-        type: Boolean,
-        required: true
-    }
-})
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  capability: {
+    type: String,
+    required: true,
+  },
+  message: {
+    type: String,
+    required: true,
+  },
+  updates: {
+    type: Boolean,
+    required: true,
+  },
+});
 
-module.exports = mongoose.model("Quote", quoteSchema)
+module.exports = mongoose.model('Quote', quoteSchema);

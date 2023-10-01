@@ -1,33 +1,35 @@
-.footer > *{
+/*CSS for the footer component*/
+
+.footer > * {
     color: white;
 }
 
-.footer span{ 
+.footer span {
     display: inline;
     text-decoration: underline;
 }
 
-.footer ul{
+.footer ul {
     display: flex;
     flex-direction: row;
 }
 
-.footer li{
+.footer li {
     margin-left: 2rem;
     transform: scale(1.5);
     transition: all 0.4s ease-in-out;
 }
 
-.footer li:hover{
+.footer li:hover {
     transform: scale(2.3);
     transition: all 0.4s ease-in-out;
 }
 
-.footer li a{
+.footer li a {
     color: white;
 }
 
-.leftFooter{
+.leftFooter {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -35,16 +37,16 @@
     margin-left: 3rem;
 }
 
-.rightFooter{
+.rightFooter {
     margin-right: 5rem;
 }
 
-.rightFooter img{
+.rightFooter img {
     max-height: 6rem;
     width: auto;
 }
 
-.footer{
+.footer {
     background-color: var(--primary-dark-blue);
     height: 10rem;
     width: 100%;
@@ -57,36 +59,36 @@
 @media (max-width:800px) {
     .footer {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 18rem;
         overflow: hidden;
-      }
-      
-      .leftFooter {
+    }
+
+    .leftFooter {
         display: flex;
         flex-direction: column;
         gap: 2rem;
         margin: 0;
         text-align: center;
-      }
-      
-      .leftFooter span {
+    }
+
+    .leftFooter span {
         margin-top: 0.5rem;
-      }
-      
-      .leftFooter ul {
-        list-style: none; 
+    }
+
+    .leftFooter ul {
+        list-style: none;
         padding: 0;
-        display: flex; 
+        display: flex;
         gap: 1rem;
         margin-right: 2.4rem;
-      }
-      
-      .rightFooter {
+    }
+
+    .rightFooter {
         margin: 0;
         margin-top: 2rem;
         text-align: center;
-      }
+    }
 }

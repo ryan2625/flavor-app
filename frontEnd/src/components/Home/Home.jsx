@@ -36,7 +36,7 @@ export const Home = () => {
 
   useEffect(() => {
     setTimeout(checkSource, 300);
-  }, []);
+  }, );
 
   return (
     <div>

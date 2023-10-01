@@ -21,7 +21,7 @@ export const Footer = () => {
     
   useEffect(() => {
     setYearString(new Date().getFullYear().toString());
-  }, []);
+  }, );
 
   return (
     <div className="footer">

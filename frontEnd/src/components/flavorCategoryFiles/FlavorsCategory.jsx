@@ -36,7 +36,7 @@ export const FlavorsCategory = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, );
+  }, []);
 
   /**
    * 

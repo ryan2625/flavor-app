@@ -24,7 +24,7 @@ export const Flavors = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, );
+  }, []);
 
   /** 
    *  
@@ -49,7 +49,7 @@ export const Flavors = () => {
     };
 
     fetchCategoryFlavor();
-  }, []);
+  }, );
 
   return (
     <>

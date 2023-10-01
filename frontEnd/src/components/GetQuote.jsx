@@ -3,6 +3,8 @@ import { useState } from 'react'
 
 export const GetQuote = () => {
 
+  const [success, setSuccess] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,6 +33,9 @@ export const GetQuote = () => {
         message: "",
         updates: false
       });
+      if (response.ok) {
+        setSuccess(true);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -103,6 +108,7 @@ export const GetQuote = () => {
         checked={formData.updates}
         onChange={handleCheckboxChange}/>
       <button className="formButton">Get a Quote</button>
+      {success && <p style={{ marginTop: '2rem' }}>Thank you for your submission!</p>}
     </form>
     </div>
   )

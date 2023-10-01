@@ -40,3 +40,17 @@
       opacity: 1; 
     }
   }
+
+  @media (max-width: 630px){
+    .carousel-caption > p,
+    .carousel-caption > h3 {
+        font-size: x-small;
+        color: black;
+    }
+
+    .carousel-control-next, .carousel-control-prev {
+        width: 30% !important;
+        transform: scale(.5);
+    }
+}
+  

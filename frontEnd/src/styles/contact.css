@@ -76,3 +76,12 @@
     }
     
 }
+
+@media (max-width: 410px){
+    
+    .formContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

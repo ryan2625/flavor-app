@@ -18,7 +18,8 @@ export const Flavors = () => {
 
 /**
  * This useEffect hook scrolls the page to the top of the page when the component mounts. this ensures the user does
- * not enter into a route with the page scrolled down.
+ * not enter into a path with the page scrolled down.
+ * 
  */
 
   useEffect(() => {

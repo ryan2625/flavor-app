@@ -12,7 +12,8 @@ import './../../styles/navbar.css';
  * This component represents the navigation bar and manages the mobile menu's status.
  * It can communicate with App.js to inform whether the mobile menu is open or closed.
  * It also fetches the categories from the backend and renders them in the navigation bar
- * dropdown and mobile menu dropdown
+ * dropdown and mobile menu dropdown. This component could be optimized and refactored
+ * futher.
  * 
  */
 export const Navigation = ({ status, setStatus }) => {
@@ -67,9 +68,12 @@ export const Navigation = ({ status, setStatus }) => {
             </li>
             <li>
               <NavDropdown title="Capabilities">
-                <NavDropdown.Item href="design">Design</NavDropdown.Item>
-                <NavDropdown.Item href="production">Production</NavDropdown.Item>
-                <NavDropdown.Item href="certification">Certification</NavDropdown.Item>
+
+              {/*We could set the path for these, but the pages don't actually exist.*/}
+
+                <NavDropdown.Item>Design</NavDropdown.Item>
+                <NavDropdown.Item>Production</NavDropdown.Item>
+                <NavDropdown.Item>Certification</NavDropdown.Item>
               </NavDropdown>
             </li>
             <li>
@@ -133,9 +137,9 @@ export const Navigation = ({ status, setStatus }) => {
                 </li>
                 <li>
                   <NavDropdown title="Capabilities">
-                    <NavDropdown.Item href="design">Design</NavDropdown.Item>
-                    <NavDropdown.Item href="production">Production</NavDropdown.Item>
-                    <NavDropdown.Item href="certification">Certification</NavDropdown.Item>
+                    <NavDropdown.Item>Design</NavDropdown.Item>
+                    <NavDropdown.Item>Production</NavDropdown.Item>
+                    <NavDropdown.Item>Certification</NavDropdown.Item>
                   </NavDropdown>
                 </li>
                 <li>

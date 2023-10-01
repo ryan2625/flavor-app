@@ -27,7 +27,6 @@ export const Home = () => {
     if (source === 'contact') {
       const targetElement = document.getElementById('contactTarget');
       if (targetElement) {
-        console.log('Triggered');
         targetElement.scrollIntoView({ behavior: 'smooth', block: 'end' });
       }
     }
@@ -50,7 +49,7 @@ export const Home = () => {
         <GetQuote />
       </div>
 
-      /* This div is used to scroll to the contact me form if you access the page via the contact link in the navbar */
+      {/* This div is used to scroll to the contact me form if you access the page via the contact link in the navbar via its ID */}
 
       <div id="contactTarget">
         <Contact />

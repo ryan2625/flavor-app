@@ -6,7 +6,7 @@ import '../../styles/contact.css';
  *
  * This component represents a contact form that pretends to send data to the server.
  * 
- * The use state holds the data and matches it with the value of the form via the handleInputChange function.
+ * The use state holds the data and the input form data is matched with the value of the state via the handleInputChange function.
  * The handle submit function resets the data back to empty.
  * 
  */

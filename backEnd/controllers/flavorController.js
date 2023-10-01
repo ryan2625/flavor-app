@@ -8,7 +8,9 @@ const Flavor = require('../models/flavor');
  * 
  */
 
-// GET all flavors
+// GET all flavors... I don't believe this function is ever used in the project, but its here if you want to use postman or another tool
+/// to see all the flavors in the database.
+
 const getFlavors = async (req, res) => {
   try {
     const flavors = await Flavor.distinct('flavorName');
@@ -31,7 +33,6 @@ const getCategories = async (req, res) => {
 // GET all flavors in a category
 const getFlavorsByCategory = async (req, res) => {
   const category = req.params.category;
-  console.log(category);
   try {
     const flavors = await Flavor.find({ category: category }, 'flavorName');
     res.status(200).json(flavors);

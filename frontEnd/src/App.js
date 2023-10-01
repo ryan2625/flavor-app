@@ -26,8 +26,8 @@ import { Flavors } from './components/Flavors';
  *
  * This component serves as the main entry point of the web app and defines the routing structure
  * using React Router. It also manages the mobile menu status and 
- * passes whether the mobile menu is open or closed to the *Navigation component
- * 
+ * receives the status from the Navigation component on whether to display the mobile menu.
+ * or not. It passes the status state as props.
  * 
  * This component also contains the navigation and footer outside of the routes
  * so that they are always rendered on the page.

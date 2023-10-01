@@ -49,7 +49,7 @@ export const Flavors = () => {
     };
 
     fetchCategoryFlavor();
-  }, );
+  }, [] );
 
   return (
     <>

@@ -38,7 +38,6 @@ export const FlavorsCategory = () => {
         console.log(error);
       }
     };
-
     fetchCategories();
   }, []);
 

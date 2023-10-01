@@ -145,24 +145,46 @@ nav li {
 
     .dropdown-item {
         color: rgb(255, 255, 255) !important;
-        position: relative;
-        z-index: 999999;
     }
 
     .dropdown-menu {
         background-color: rgb(10, 10, 10) !important;
-        color: white !important;
-        position: absolute;
-        left: 0;
-        z-index: 999999;
     }
 
     .dropdown-item:hover {
         background-color: rgb(99, 99, 99) !important;
-        color: white !important;
     }
 
     .dropdown-menu.show {
         transform: translate(120px, 2px) !important;
     }
 }
+
+    @media (max-width: 560px){
+
+        .dropdown-menu{
+            position: relative !important;
+            width: 100%;
+        }
+
+        .dropdown-menu.show{
+            transform: translate(0px, 0px) !important;
+        }
+        .dropdown-item{
+            z-index: 10000;
+            color: red;
+        }
+
+        nav li{
+            display: flex;
+        }
+
+        .openMenu nav{
+            max-width: 280px;
+        }
+
+        .openMenu{
+            height: auto;
+            min-height: 100vh;
+        }
+    }

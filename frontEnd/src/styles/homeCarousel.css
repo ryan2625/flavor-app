@@ -28,7 +28,6 @@
 }
 
 .carousel{
-    
     border-radius: 20px;
 }
 
@@ -42,8 +41,8 @@
   }
 
   @media (max-width: 630px){
-    .carousel-caption > p,
-    .carousel-caption > h3 {
+    .sliderLinks > p,
+    .sliderLinks > h3 {
         font-size: x-small;
         color: black;
     }

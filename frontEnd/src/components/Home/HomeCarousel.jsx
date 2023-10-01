@@ -4,6 +4,8 @@ import "../../styles/homeCarousel.css"
 import  slider_1  from "./sliderImages/slider_1.jpg"
 import  slider_2  from "./sliderImages/slider_2.jpg"
 import  slider_3  from "./sliderImages/slider_3.jpg"
+import { Link } from 'react-router-dom';
+<link rel="stylesheet" href="" />
 
 export const HomeCarousel = () => {
 
@@ -22,8 +24,10 @@ export const HomeCarousel = () => {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h3>CERTIFICATION</h3>
-              <p>DISCOVER MORE</p>
+              <Link to="certification" className='sliderLinks'>
+                <h3>CERTIFICATION</h3>
+                <p>DISCOVER MORE</p>
+              </Link>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -34,8 +38,10 @@ export const HomeCarousel = () => {
             />
   
             <Carousel.Caption>
+            <Link to="production" className='sliderLinks'>
               <h3>PRODUCTION</h3>
               <p>DISCOVER MORE</p>
+              </Link>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -46,8 +52,10 @@ export const HomeCarousel = () => {
             />
   
             <Carousel.Caption>
+            <Link to="design" className='sliderLinks'>
               <h3>DESIGN</h3>
               <p>DISCOVER MORE</p>
+              </Link>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

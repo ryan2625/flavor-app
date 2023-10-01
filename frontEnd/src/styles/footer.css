@@ -46,10 +46,47 @@
 
 .footer{
     background-color: var(--primary-dark-blue);
-    height: 12rem;
+    height: 10rem;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-top: 2px solid rgba(0, 0, 0, 0.292);
+}
+
+@media (max-width:800px) {
+    .footer {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+        height: 18rem;
+        overflow: hidden;
+      }
+      
+      .leftFooter {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 0;
+        text-align: center;
+      }
+      
+      .leftFooter span {
+        margin-top: 0.5rem;
+      }
+      
+      .leftFooter ul {
+        list-style: none; 
+        padding: 0;
+        display: flex; 
+        gap: 1rem;
+        margin-right: 2.4rem;
+      }
+      
+      .rightFooter {
+        margin: 0;
+        margin-top: 2rem;
+        text-align: center;
+      }
 }

@@ -18,8 +18,16 @@ ul {
     list-style: none;
 }
 
+.setMobileMenu{
+  max-height: 100vh;
+  overflow: hidden;
+}
+
   :root {
     --primary-text-color: #333333;
     --primary-background-color: #CCCCCC;
     --primary-dark-blue: #326295;
+    --sm: 576px;
+    --md: 768px;
+    --lg: 1020px;
   }

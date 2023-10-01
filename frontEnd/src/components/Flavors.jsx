@@ -9,6 +9,10 @@ export const Flavors = () => {
   const [flavors, setFlavors] = useState(null)
 
   useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, );
+
+  useEffect(() => {
     const fetchCategoryFlavor = async () => {
       try {
         const response = await fetch(`http://localhost:4000/api/flavors/${category}`);

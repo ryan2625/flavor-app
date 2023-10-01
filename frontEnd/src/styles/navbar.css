@@ -1,22 +1,23 @@
-nav li{
+nav li {
     margin: 1.5rem;
     position: relative;
 }
 
-.navContainer img{
+.navContainer img {
     height: 100%;
     margin-left: 20px;
 }
 
-.navContainer nav{
+.navContainer nav {
     margin-right: 5rem;
 }
 
-.navContainer ul{
+.navContainer ul {
     display: flex;
 }
 
-.navContainer{
+
+.navContainer {
     display: flex;
     flex-direction: row;
     height: 90px;
@@ -28,23 +29,140 @@ nav li{
 }
 
 .hoverLink::after {
-    content: ''; 
+    content: '';
     position: absolute;
-    width: 100%; 
-    height: 2px; 
+    width: 100%;
+    height: 2px;
     background-color: #000000;
     bottom: 0;
-    left: 0; 
-    transform: scaleX(0); 
+    left: 0;
+    transform: scaleX(0);
     transform-origin: bottom right;
-    transition: transform 0.3s ease; 
-  }
-  
-  .hoverLink:hover::after {
-    transform: scaleX(1); 
-    transform-origin: bottom left;
-  }
+    transition: transform 0.3s ease;
+}
 
-#logoLink{
+.hoverLink:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#logoLink {
     height: 100%;
+}
+
+.mobileContainer {
+    display: none;
+}
+
+
+
+
+
+@media (max-width:992px) {
+    .navContainer {
+        display: none;
+    }
+
+    .mobileContainer {
+        display: flex;
+        height: 80px;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.506);
+    }
+
+    .mobileContainer img {
+        height: 80%;
+        margin-left: 20px;
+    }
+
+    #logoLink {
+        display: flex;
+        align-items: center;
+    }
+
+    .burgerIcon {
+        margin-right: 20px;
+        transform: scale(2);
+        position: absolute;
+        right: 0;
+        top: 26px;
+        z-index: 20;
+    }
+
+    .menuStatus {
+        cursor: pointer;
+    }
+
+    .closed {
+        display: none;
+    }
+
+    .open {
+        display: block;
+    }
+
+    .openMenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        z-index: 10;
+        padding: 1rem;
+    }
+
+    .hoverLink::after {
+        display: none;
+    }
+
+    .hoverLink:hover {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .mobileNavUl {
+        border: 1px solid black;
+        padding: 1rem;
+    }
+
+    .mobileNavUl>li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .mobileNavUl>li>* {
+        margin: 2rem;
+        backdrop-filter: brightness(0.8);
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    .dropdown-item {
+        color: rgb(255, 255, 255) !important;
+        position: relative;
+        z-index: 999999;
+    }
+
+    .dropdown-menu {
+        background-color: rgb(10, 10, 10) !important;
+        color: white !important;
+        position: absolute;
+        left: 0;
+        z-index: 999999;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgb(99, 99, 99) !important;
+        color: white !important;
+    }
+
+    .dropdown-menu.show {
+        transform: translate(120px, 2px) !important;
+    }
 }

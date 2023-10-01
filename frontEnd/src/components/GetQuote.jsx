@@ -96,7 +96,7 @@ export const GetQuote = () => {
         value={formData.message}
         onChange={handleInputChange}>
       </textarea>
-      <label htmlFor="formCheckbox">Would you like to receive email updates?</label>
+      <label htmlFor="formCheckbox" style={{ marginRight: "10px"}}>Would you like to receive email updates?</label>
       <input 
         type="checkbox"  
         name="formCheckbox"

@@ -84,3 +84,16 @@
     #formCheckbox{
         margin-left: 1rem;
     }
+
+    @media (max-width: 1020px) {
+      .homeContainer{
+        flex-direction: column;
+      }
+      .companyMessage{
+        flex: 0 0 100%;
+        border-bottom: 2px solid rgb(204, 204, 204);
+      }
+      .getQuote{
+        flex: 0 0 100%;
+      }
+    }

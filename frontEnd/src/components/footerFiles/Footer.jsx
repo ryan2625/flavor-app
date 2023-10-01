@@ -19,7 +19,9 @@ export const Footer = () => {
   return (
     <div className="footer">
         <div className="leftFooter">
-            <span>Copyright © {yearString}. All rights reserved.</span>
+            <span>
+                Copyright © {yearString}. All rights reserved.
+            </span>
             <ul>
                 <li>
                     <a href ="https://twitter.com/NationalLouisU"><TwitterIcon /></a>
@@ -41,5 +43,3 @@ export const Footer = () => {
     </div>
   )
 }
-
-export default Footer

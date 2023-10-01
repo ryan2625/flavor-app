@@ -21,6 +21,10 @@ export const FlavorsCategory = () => {
   const [categories, setCategories] = useState(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, );
+
+  useEffect(() => {
     const fetchCategories = async () => {
       try {
         const response = await fetch('http://localhost:4000/api/flavors/Categories');

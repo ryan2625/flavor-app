@@ -32,7 +32,7 @@ export const Home = () => {
     }
   }
 
-    /*BUG : If setTimeout is not used, triggering this function while coming from a different path (that is not / ) will cause page to flick to the bottom rapidly then back up to the top. Most likely a problem with rendering order and when the function is called. TODO if time */
+    /*BUG : If setTimeout is not used, triggering this function while coming from a different path (that is not / ) will cause page to flick to the bottom rapidly then back up to the top. Most likely a problem with rendering order and when the function is called. ALSO: need to remove search params from URL so on page refresh doesnt navigate back to contact formTODO if time */
 
   useEffect(() => {
     setTimeout(checkSource, 300);

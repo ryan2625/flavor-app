@@ -32,9 +32,6 @@ export const Home = () => {
     setTimeout(checkSource, 300)
   }, );
 
-
-
-
   return (
     <div>
       <HomeCarousel />

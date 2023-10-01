@@ -47,7 +47,7 @@ export const Flavors = () => {
             </div>
           ))}
         </div> 
-        <div className="quoteBox">
+        <div className="quoteBox" id="flavorQuote">
           <GetQuote />
         </div>
       </div> 

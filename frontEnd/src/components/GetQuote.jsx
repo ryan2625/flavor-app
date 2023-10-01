@@ -14,8 +14,11 @@ export const GetQuote = () => {
   })
 
   const handleSubmit = async (e) => {
+    if (!formData.name || !formData.email || !formData.capability || !formData.message) {
+      alert('Please fill out all required fields');
+      return;
+    }
     e.preventDefault();
-    console.log(formData)
     try {
       const { name, email, capability, message, updates } = formData;
       const quote = { name, email, capability, message, updates };

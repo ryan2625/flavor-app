@@ -136,16 +136,18 @@ export const Navigation = ({ status, setStatus }) => {
                   </Link>
                 </li>
                 <li>
+                <div className="dropCapabilities">
                   <NavDropdown title="Capabilities">
                     <NavDropdown.Item>Design</NavDropdown.Item>
                     <NavDropdown.Item>Production</NavDropdown.Item>
                     <NavDropdown.Item>Certification</NavDropdown.Item>
                   </NavDropdown>
+                </div>
                 </li>
                 <li>
-                  <NavDropdown title="Flavors">
-
-                    <NavDropdown.Item href="/categories">All Categories</NavDropdown.Item>
+                <div className="dropCategory">
+                  <NavDropdown title="Flavors" >
+                    <NavDropdown.Item href="/categories" >All Categories</NavDropdown.Item>
                     {categories &&
                       categories.map(
                         (category) => (
@@ -161,7 +163,8 @@ export const Navigation = ({ status, setStatus }) => {
                           )
                         )
                       )}
-                  </NavDropdown>
+                    </NavDropdown>
+                </div>
                 </li>
                 <li>
                   <Link to="/" onClick={handleBurgerClick}>

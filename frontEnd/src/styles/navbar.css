@@ -2,8 +2,6 @@
 *CSS for the navbar component. This css file overrides some bootstrap styles and can be refactored to be more dynamic and clean.
 */
 
-
-
 nav li {
     margin: 1.5rem;
     position: relative;
@@ -189,11 +187,6 @@ nav li {
         padding: 1rem;
         width: 100%;
         height: 100%;
-    }
-
-    .dropdown-item {
-        z-index: 10000;
-        color: red;
     }
 
     nav li {

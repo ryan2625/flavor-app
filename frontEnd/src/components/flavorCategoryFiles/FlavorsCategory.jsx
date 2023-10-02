@@ -30,19 +30,10 @@ export const FlavorsCategory = () => {
   const [categories, setCategories] = useState(null);
 
   /**
- * This useEffect hook scrolls the page to the top of the page when the component mounts. this ensures the user does
- * not enter into a route with the page scrolled down.
- */
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  /**
    * 
    * This useEffect hook makes a GET request to the backend at the path /flavors/Categories. It then sets the categoriesArray 
    * to be rendered by the component. Note: The web app only makes GET requests and the database will not be receiving anymore
-   * flavor or flavor category data. This is why this useEffect hook and others do not have a dependency array.
+   * flavor or flavor category data. This is why this useEffect hook and others have an empty dependency array.
    * 
    */
 
@@ -62,6 +53,20 @@ export const FlavorsCategory = () => {
     };
     fetchCategories();
   }, []);
+
+    /**
+ * This useEffect hook scrolls the page to the top of the page when the component mounts. this ensures the user does not enter into a route with the page scrolled down.
+ * 
+ *   Uses set timeout to prevent unexpected behavior    *  with the render ordering.
+ */
+
+    useEffect(() => {
+      setTimeout(function() {
+        window.scrollTo(0, 0);
+      }, 50);
+      
+    }, []);
+  
 
   return (
     <>

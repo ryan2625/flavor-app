@@ -41,6 +41,7 @@ export const GetQuote = () => {
       !formData.capability ||
       !formData.message
     ) {
+      e.preventDefault();
       alert("Please fill out all required fields");
       return;
     }

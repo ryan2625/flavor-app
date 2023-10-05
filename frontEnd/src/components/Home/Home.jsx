@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../../styles/home.css';
+import { ScrollContext } from '../../contexts/scrollProvider';
 import { HomeCarousel } from './HomeCarousel';
 import { Contact } from './Contact';
 import { GetQuote } from '../GetQuote';
@@ -15,6 +16,11 @@ import { GetQuote } from '../GetQuote';
 
 export const Home = () => {
 
+  const { contextValue, updateValue } = useContext(ScrollContext);
+
+  const [checkState, setCheckState] = useState(false);
+
+  const scrollToRef = useRef();
   const location = useLocation();
 
   /*This function retrieves the search params and if you access this page via the contact param from the contact link in 
@@ -23,11 +29,15 @@ export const Home = () => {
   function checkSource() {
     const searchParams = new URLSearchParams(location.search);
     const source = searchParams.get('source');
-
     if (source === 'contact') {
       const targetElement = document.getElementById('contactTarget');
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        updateValue(true);
+        if (contextValue === true) {
+          updateValue(false);
+          console.log(contextValue)
+          scrollToRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
       }
     }
   }
@@ -35,8 +45,8 @@ export const Home = () => {
     /*BUG : If setTimeout is not used, triggering this function while coming from a different path (that is not / ) will cause page to flick to the bottom rapidly then back up to the top. Most likely a problem with rendering order and when the function is called. ALSO: need to remove search params from URL so on page refresh doesnt navigate back to contact formTODO if time. Prefetching may help solve issue. */
 
   useEffect(() => {
-    setTimeout(checkSource, 400);
-  }, );
+    setTimeout(checkSource(), 500);
+  }, [checkState]);
 
   return (
     <div>
@@ -51,7 +61,7 @@ export const Home = () => {
 
       {/* This div is used to scroll to the contact me form if you access the page via the contact link in the navbar via its ID */}
 
-      <div id="contactTarget">
+      <div ref={scrollToRef} id="contactTarget">
         <Contact />
       </div>
     </div>

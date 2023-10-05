@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ScrollContext } from '../../contexts/scrollProvider';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -17,6 +18,8 @@ import './../../styles/navbar.css';
  * 
  */
 export const Navigation = ({ status, setStatus }) => {
+
+  const { contextValue, updateValue } = useContext(ScrollContext);
   
   /*Defining a variable to hold the href in the nav drop down menu*/
 
@@ -53,6 +56,15 @@ export const Navigation = ({ status, setStatus }) => {
 
     fetchCategories();
   }, []);
+
+  useEffect(() => {
+    // Add an event listener for scrolling to the element when the component mounts
+    const linkElement = document.querySelector('a.setScrollContext');
+    if (linkElement) {
+      linkElement.addEventListener('click', () => updateValue(!contextValue));
+    }
+  }, []);
+
 
   return ( 
     /*Desktop navbar*/
@@ -102,7 +114,7 @@ export const Navigation = ({ status, setStatus }) => {
 
             {/*This link saves the search params. This is used to automatically scroll to the contact component on the home page. See: Home page*/}
 
-              <Link to={{ pathname: '/', search: '?source=contact' }}>Contact Us</Link>
+              <Link to={{ pathname: '/', search: '?source=contact' }}className='setScrollContext'>Contact Us</Link>
             </li>
           </ul>
         </nav>
@@ -176,7 +188,7 @@ export const Navigation = ({ status, setStatus }) => {
                   <Link
                     to={{ pathname: '/', search: '?source=contact' }}
                     onClick={handleBurgerClick}
-                  >
+                    className='setScrollContext'>
                     Contact Us
                   </Link>
                 </li>

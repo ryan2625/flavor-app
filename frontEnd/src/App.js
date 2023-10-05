@@ -16,6 +16,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { Home } from './components/Home/Home';
+import { ScrollContextProvider } from './contexts/scrollProvider';
 import { FlavorsCategory } from './components/flavorCategoryFiles/FlavorsCategory';
 import { Navigation } from './components/navbarFiles/Navigation';
 import { Footer } from './components/footerFiles/Footer';
@@ -40,12 +41,14 @@ function App() {
   return (
     <div className={status ? 'setMobileMenu' : ''}>
       <BrowserRouter>
+        <ScrollContextProvider>
         <Navigation status={status} setStatus={setStatus} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="categories" element={<FlavorsCategory />} />
           <Route path="flavors/:category" element={<Flavors />} />
         </Routes>
+        </ScrollContextProvider>
         <Footer />
       </BrowserRouter>
     </div>

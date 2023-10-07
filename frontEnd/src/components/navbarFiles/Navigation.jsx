@@ -67,16 +67,6 @@ export const Navigation = ({ status, setStatus }) => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <NavDropdown title="Capabilities">
-
-              {/*We could set the path for these, but the pages don't actually exist.*/}
-
-                <NavDropdown.Item>Design</NavDropdown.Item>
-                <NavDropdown.Item>Production</NavDropdown.Item>
-                <NavDropdown.Item>Certification</NavDropdown.Item>
-              </NavDropdown>
-            </li>
-            <li>
               <NavDropdown title="Flavors">
 
               {/*Here we dynamically render the flavor categories, and set each category with its respective link*/}
@@ -94,9 +84,6 @@ export const Navigation = ({ status, setStatus }) => {
                     )
                   )}
               </NavDropdown>
-            </li>
-            <li className="hoverLink">
-              <Link to="/">About us</Link>
             </li>
             <li className="hoverLink">
 
@@ -136,15 +123,6 @@ export const Navigation = ({ status, setStatus }) => {
                   </Link>
                 </li>
                 <li>
-                <div className="dropCapabilities">
-                  <NavDropdown title="Capabilities">
-                    <NavDropdown.Item>Design</NavDropdown.Item>
-                    <NavDropdown.Item>Production</NavDropdown.Item>
-                    <NavDropdown.Item>Certification</NavDropdown.Item>
-                  </NavDropdown>
-                </div>
-                </li>
-                <li>
                 <div className="dropCategory">
                   <NavDropdown title="Flavors" >
                     <NavDropdown.Item href="/categories" rel="prefetch">All Categories</NavDropdown.Item>
@@ -166,11 +144,6 @@ export const Navigation = ({ status, setStatus }) => {
                       )}
                     </NavDropdown>
                 </div>
-                </li>
-                <li>
-                  <Link to="/" onClick={handleBurgerClick}>
-                    About us
-                  </Link>
                 </li>
                 <li>
 

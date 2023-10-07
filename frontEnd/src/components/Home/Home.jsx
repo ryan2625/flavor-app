@@ -4,7 +4,7 @@ import '../../styles/home.css';
 import { HomeCarousel } from './HomeCarousel';
 import { Contact } from './Contact';
 import { GetQuote } from '../GetQuote';
-
+import { ServerAlert } from '../ServerAlert';
 /**
  * Home Component
  *
@@ -40,6 +40,7 @@ export const Home = () => {
 
   return (
     <div>
+      <ServerAlert />
       <HomeCarousel />
       <div className="homeContainer">
         <div className="companyMessage">

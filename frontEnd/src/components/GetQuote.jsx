@@ -49,7 +49,7 @@ export const GetQuote = () => {
     try {
       const { name, email, capability, message, updates } = formData;
       const quote = { name, email, capability, message, updates };
-      const response = await fetch("http://localhost:4000/api/quote", {
+      const response = await fetch("https://mern-flavor-app.onrender.com/api/quote", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

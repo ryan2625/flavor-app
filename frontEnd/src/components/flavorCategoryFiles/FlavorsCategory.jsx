@@ -40,7 +40,7 @@ export const FlavorsCategory = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/flavors/Categories');
+        const response = await fetch('https://mern-flavor-app.onrender.com/api/flavors/Categories');
         if (response.ok) {
           const categoriesArray = await response.json();
           setCategories(categoriesArray);

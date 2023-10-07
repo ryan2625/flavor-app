@@ -10,9 +10,7 @@ of flavor and category objects. This app was created largely over
 the course of 3 days for NLU's (National Louis University) coding 
 challenge with a few small updates after this time.
 
-  This app is accessible and employs several optimization techniques such 
-as using modern image formats like as .avif, prefetching content, and caching 
-CSS styles.
+  This branch holds the changes that corrected the paths to host the server and client on Render.com
  
   Author: Ryan Freas
   Created: 9/27/23

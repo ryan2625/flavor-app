@@ -11,10 +11,12 @@ the course of 3 days for NLU's (National Louis University) coding
 challenge with a few small updates after this time.
 
   This app is accessible and employs several optimization techniques such 
-as modern image formats such as .avif, preloading content, and caching 
+as using modern image formats like as .avif, prefetching content, and caching 
 CSS styles.
  
   Author: Ryan Freas
   Created: 9/27/23
+  
+Link: 
 
 https://mern-flavor-site.onrender.com/

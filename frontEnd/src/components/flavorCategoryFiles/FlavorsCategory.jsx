@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GetQuote } from '../GetQuote';
 import '../../styles/flavorsCategory.css';
-import food1 from './food_1.jpg';
-import food2 from './food_2.jpg';
-import food3 from './food_3.jpg';
+import food1 from './food_1.avif';
+import food2 from './food_2.avif';
+import food3 from './food_3.avif';
 
 /**
  * FlavorsCategory Component
@@ -63,7 +63,7 @@ export const FlavorsCategory = () => {
     useEffect(() => {
       setTimeout(function() {
         window.scrollTo(0, 0);
-      }, 50);
+      }, 150);
       
     }, []);
   

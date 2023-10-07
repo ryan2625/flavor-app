@@ -58,7 +58,7 @@ export const Navigation = ({ status, setStatus }) => {
     /*Desktop navbar*/
     <div className="browserMobileNav">
       <div className="navContainer">
-        <Link id="logoLink" to="/">
+        <Link className='logoLink' to="/">
           <img src={logo} alt="Company Logo" />
         </Link>
         <nav>
@@ -111,7 +111,7 @@ export const Navigation = ({ status, setStatus }) => {
       {/* Mobile navbar version... */}
 
       <div className="mobileContainer">
-        <Link id="logoLink" to="/">
+        <Link className='logoLink' to="/">
           <img src={logo} alt="Company Logo" />
         </Link>
         <div className="menuStatus">

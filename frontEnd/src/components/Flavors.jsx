@@ -51,7 +51,7 @@ export const Flavors = () => {
   useEffect(() => {
     setTimeout(function() {
       window.scrollTo(0, 0);
-    }, 50);
+    }, 150);
   }, []);
 
 

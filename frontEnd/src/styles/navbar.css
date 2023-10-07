@@ -49,7 +49,7 @@ nav li {
     transform-origin: bottom left;
 }
 
-#logoLink {
+.logoLink {
     height: 100%;
 }
 
@@ -192,7 +192,7 @@ nav li {
         transform: translate(0px, 0px) !important;
     }
 
-    #logoLink {
+    .logoLink {
         display: flex;
         align-items: center;
     }

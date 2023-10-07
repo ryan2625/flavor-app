@@ -29,22 +29,22 @@ export const Footer = () => {
         <span>Copyright © {yearString}. All rights reserved.</span>
         <ul>
           <li>
-            <a href="https://twitter.com/NationalLouisU">
+            <a href="https://twitter.com/NationalLouisU" aria-label='Twitter Icon'>
               <TwitterIcon />
             </a>
           </li>
           <li>
-            <a href="https://www.facebook.com/NationalLouis?fref=ts">
+            <a href="https://www.facebook.com/NationalLouis?fref=ts" aria-label='Facebook Icon'>
               <FacebookIcon />
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/nationallouisu/">
+            <a href="https://www.instagram.com/nationallouisu/" aria-label='IInstagram Icon'>
               <InstagramIcon />
             </a>
           </li>
           <li>
-            <a href="https://www.youtube.com/user/nlumarketing">
+            <a href="https://www.youtube.com/user/nlumarketing" aria-label='Youtube Icon'>
               <YouTubeIcon />
             </a>
           </li>

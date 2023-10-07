@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
-
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 /**
 *Global styles. I import bootstrap at the top so all files have access to its clases and
-*import a special font that I thought was suitible.
+*set the raleway font as the default font for the whole app. This font is loaded via *the webfont loader in index.js
 */
 
 body {
     font-family: 'Raleway', sans-serif;
+    font-weight: 600; 
     margin: 0;
     padding: 0;
 }

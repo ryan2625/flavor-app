@@ -39,7 +39,7 @@ export const Navigation = ({ status, setStatus }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/flavors/Categories');
+        const response = await fetch('https://mern-flavor-app.onrender.com/api/flavors/Categories');
         if (response.ok) {
           const categoriesArray = await response.json();
           setCategories(categoriesArray);
@@ -81,13 +81,13 @@ export const Navigation = ({ status, setStatus }) => {
 
               {/*Here we dynamically render the flavor categories, and set each category with its respective link*/}
 
-                <NavDropdown.Item href="/categories">All Categories</NavDropdown.Item>
+                <NavDropdown.Item href="/categories" rel="prefetch">All Categories</NavDropdown.Item>
                 {categories &&
                   categories.map(
                     (category) => (
                       (link = `/flavors/${category}`),
                       (
-                        <NavDropdown.Item href={link} key={category}>
+                        <NavDropdown.Item href={link} key={category} rel="prefetch">
                           {category}
                         </NavDropdown.Item>
                       )
@@ -147,7 +147,7 @@ export const Navigation = ({ status, setStatus }) => {
                 <li>
                 <div className="dropCategory">
                   <NavDropdown title="Flavors" >
-                    <NavDropdown.Item href="/categories" >All Categories</NavDropdown.Item>
+                    <NavDropdown.Item href="/categories" rel="prefetch">All Categories</NavDropdown.Item>
                     {categories &&
                       categories.map(
                         (category) => (
@@ -157,6 +157,7 @@ export const Navigation = ({ status, setStatus }) => {
                               href={link}
                               key={category}
                               onClick={handleBurgerClick}
+                              rel="prefetch"
                             >
                               {category}
                             </NavDropdown.Item>

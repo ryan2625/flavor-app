@@ -40,6 +40,11 @@
     letter-spacing: 2px;
 }
 
+#renderLink{
+    color: rgb(73, 219, 255);
+    text-decoration: underline;
+}
+
 @media (max-width: 611px){
     .warning{
         padding-top: 3rem;

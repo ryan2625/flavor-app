@@ -33,7 +33,7 @@ export const Home = () => {
     }
   }
 
-    /*BUG : If setTimeout is not used, triggering this function while coming from a different path (that is not / ) will cause page to flick to the bottom rapidly then back up to the top. Most likely a problem with rendering order and when the function is called. ALSO: need to remove search params from URL so on page refresh doesnt navigate back to contact formTODO if time. Prefetching may help solve issue. */
+    /*BUG : If setTimeout is not used, triggering this function while coming from a different path (that is not / ) will cause page to flick to the bottom rapidly then back up to the top. Most likely a problem with rendering order and when the function is called or with router DOM */
 
   useEffect(() => {
     setTimeout(checkSource, 400);
@@ -68,7 +68,7 @@ export const Home = () => {
 
     const compareStored = parseInt(localStorage.getItem('timestamp'), 10);
 
-    if (initialDate - compareStored >= 1000 * 10) {
+    if (initialDate - compareStored >= 1000 * 60 * 60) {
       localStorage.setItem('timestamp', initialDate);
       setClose(false);
     }

@@ -25,7 +25,7 @@ export const ServerAlert = ({closed, setCloseState}) => {
         </h1>
         <p>
             This site is hosted on Render.com. It uses the free tier, so the server may take a few seconds
-            to wake up. If the dropdown menu on flavors only shows one category, please wait a few seconds and refresh the page.
+            to wake up and it may cause performance issues. If the dropdown menu on flavors only shows one category, please wait a little and refresh the page.
             Thank you!
         </p>
     </div>

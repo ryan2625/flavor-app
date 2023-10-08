@@ -1,37 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useReducer } from 'react';
+import formReducer from '../reducer/formReducer';
 
 /**
  * GetQuote Component
  *
  * This component represents a form used for getting a quote. It appears on the main page, the
- * categoryFlavors page, and the category page. This component saves a users name, email, capability, message, and
+ * categoryFlavors page, and the category page. This component saves a user's name, email, capability, message, and
  * if they want to receive email alerts. It then sends this data to the backend to be saved in a database at the route
  * /api/quote with a POST request.
- * 
  */
 
 export const GetQuote = () => {
 
-  /*
-  *If the user successfully sends their data to the server, this state will change and a small message will appear
-  *letting the user know
-  */
- 
-  const [success, setSuccess] = useState(false);
+  // This is the initial state of the form data. This is used as the initial state for the formReducer.
 
-  const [formData, setFormData] = useState({
+  const initialState = {
     name: '',
     email: '',
     capability: '',
     message: '',
     updates: false,
-  });
+  };
+
+  const [formData, dispatch] = useReducer(formReducer, initialState);
+
+  /*
+  *If the user successfully sends their data to the server, this state will change and a small message will appear
+  *letting the user know
+  */
+
+  const [success, setSuccess] = useState(false);
 
   /**
    * 
    * This function handles the submit button on the form. It checks to make sure all required fields are filled out and
    * then sends the data to the backend to be saved in a database at the route /api/quote with a POST request.
-   * 
    */
 
   const handleSubmit = async (e) => {
@@ -56,13 +59,7 @@ export const GetQuote = () => {
         },
         body: JSON.stringify(quote),
       });
-      setFormData({
-        name: "",
-        email: "",
-        capability: "",
-        message: "",
-        updates: false,
-      });
+      dispatch({ type: "CLEAR_FORM" });
       if (response.ok) {
         setSuccess(true);
       }
@@ -71,27 +68,36 @@ export const GetQuote = () => {
     }
   };
 
+  /**
+   *  This function handles the input fields on the form
+   *  via the formReducer.
+   */
+
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    if (e.target.type === "select-one") {
-      const selectedOption = e.target.options[e.target.selectedIndex];
-      setFormData({
-        ...formData,
-        [name]: selectedOption.value,
-      });
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
-    }
+    dispatch({ 
+      type: "UPDATE_FORM", 
+      identity: e.target.name || "",  
+      value: e.target.value || ""
+    });
   };
 
+    /**
+   *  This function handles the dropdow field on the form
+   *  via the formReducer.
+   */
+
+  const handleDropdownChange = (e) => {
+    const index = e.target.options[e.target.selectedIndex];
+    dispatch({ type: "UPDATE_DROPDOWN", index: index.value });
+  };
+
+      /**
+   *  This function handles the checkbox field on the form
+   *  via the formReducer.
+   */
+
   const handleCheckboxChange = () => {
-    setFormData({
-      ...formData,
-      updates: !formData.updates, 
-    });
+    dispatch({ type: "UPDATE_CHECKBOX" });
   };
 
   return (
@@ -118,7 +124,7 @@ export const GetQuote = () => {
           className="formDropdown"
           name="capability"
           value={formData.capability}
-          onChange={handleInputChange}
+          onChange={handleDropdownChange}
         >
           <option value={""} disabled>
             Select a capability

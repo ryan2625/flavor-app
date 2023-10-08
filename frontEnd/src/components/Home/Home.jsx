@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../../styles/home.css';
 import { HomeCarousel } from './HomeCarousel';
 import { Contact } from './Contact';
 import { GetQuote } from '../GetQuote';
 import { ServerAlert } from '../ServerAlert';
+
 /**
  * Home Component
  *
@@ -38,9 +39,52 @@ export const Home = () => {
     setTimeout(checkSource, 400);
   }, );
 
+  /**
+   * This state is used to determine wheter to show the server warning or not.
+   * If the user has visited the site before and has clicked the X 
+   * indicating they have read the warning, then they won't be shown the
+   * message again for a specified time (see use effect). This state is passed 
+   * to the server alert component as a prop to determine whether to show the
+   * warning or not.
+   */
+
+  const [closed, setClose] = useState(localStorage.getItem('closed') || false)
+
+  /**
+   * This use effect checks the current date. If the cached date is more than 
+   * an hour old, it will set the closed state to false, meaning the user will
+   * see the warning again.
+   */
+
+  useEffect(() => {
+
+    {/*Variable to hold the current date*/}
+    const initialDate = new Date().getTime().toString();
+
+    {/*If a user has never visited this site before, it will add a date to local storage*/}
+    if (!localStorage.getItem('timestamp')) {
+      localStorage.setItem('timestamp', initialDate);
+    }
+
+    const compareStored = parseInt(localStorage.getItem('timestamp'), 10);
+
+    if (initialDate - compareStored >= 1000 * 10) {
+      localStorage.setItem('timestamp', initialDate);
+      setClose(false);
+    }
+  }, []);
+
+    /*A function to change the state of the server alert, sent down as a prop
+    * to the server alert component.
+    */
+
+  function setCloseState(){
+    setClose(true)
+  }
+
   return (
     <div>
-      <ServerAlert />
+      <ServerAlert  closed={closed} setCloseState={setCloseState}/>
       <HomeCarousel />
       <div className="homeContainer">
         <div className="companyMessage">

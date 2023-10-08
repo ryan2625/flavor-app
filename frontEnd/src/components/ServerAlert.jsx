@@ -8,14 +8,12 @@ import CloseIcon from '@mui/icons-material/Close';
  * 
 **/
 
-export const ServerAlert = () => {
+export const ServerAlert = ({closed, setCloseState}) => {
 
     /*This state is used to determine wheter to show the server warning or not. If the user has visited the site before and has clicked the red X, indicating they have read the warning, then they won't be shown the message again. */
 
-    const [closed, setClose] = useState(localStorage.getItem('closed') || false)
-
     function closeMenu() {
-        setClose(true);
+        setCloseState()
         localStorage.setItem('closed', JSON.stringify(true));
     }
 

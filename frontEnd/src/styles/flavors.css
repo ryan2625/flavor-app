@@ -52,6 +52,9 @@
     position: absolute;
     left: 45px;
     transform: scale(2);
+    backdrop-filter: brightness(75%);
+    border-radius: 50%;
+    padding: .1rem;
 }
 
 @media (max-width: 1190px) {
@@ -81,5 +84,6 @@
 
     .backArrow{
         top: 100px;
+        left: 35px;
     }
 }

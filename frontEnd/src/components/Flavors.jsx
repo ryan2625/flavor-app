@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { GetQuote } from './GetQuote';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Link } from 'react-router-dom';
 import '../styles/flavors.css';
 
 /**
@@ -60,6 +62,11 @@ export const Flavors = () => {
     <>
       <div className="categoryContainer">
         <div className="categoryFlavors">
+          <div className="backArrow">
+            <Link to="/categories">
+              <ArrowBackIcon/>
+            </Link>
+          </div>
           <h1 className="categoryHeader">All {category} Flavors</h1>
           {flavors &&
             flavors.map((flavor, index) => (

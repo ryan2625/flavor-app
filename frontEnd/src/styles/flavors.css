@@ -48,6 +48,12 @@
     text-align: center;
 }
 
+.backArrow{
+    position: absolute;
+    left: 45px;
+    transform: scale(2);
+}
+
 @media (max-width: 1190px) {
     .categoryFlavors {
         margin: 1rem;
@@ -71,5 +77,9 @@
 @media (max-width: 550px){
     .categoryFlavors{
         flex-direction: column;
+    }
+
+    .backArrow{
+        top: 100px;
     }
 }

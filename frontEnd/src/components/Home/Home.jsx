@@ -68,7 +68,7 @@ export const Home = () => {
 
     const compareStored = parseInt(localStorage.getItem('timestamp'), 10);
 
-    if (initialDate - compareStored >= 1000 * 60 * 60) {
+    if (initialDate - compareStored >= 1000 * 60 * 15) {
       localStorage.setItem('timestamp', initialDate);
       setClose(false);
     }

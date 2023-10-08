@@ -72,9 +72,10 @@ export const FlavorsCategory = () => {
     <>
       <div className="displayCategoryContainer">
         <div className="flavorsCategory">
-
+        <h1>
+          All Categories
+        </h1>
           {/*Dynamically render the categories and set the link to the corresponding flavors page*/}
-          
           {categories &&
             categories.map((category) => {
               categoryLink = `/flavors/${category}`;

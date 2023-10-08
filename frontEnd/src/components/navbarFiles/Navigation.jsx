@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import logo from './logo.png';
 import './../../styles/navbar.css';
 
@@ -17,6 +18,10 @@ import './../../styles/navbar.css';
  * 
  */
 export const Navigation = ({ status, setStatus }) => {
+
+  /*Defining a variable to hold the status of the server*/
+
+  const [serverAlert, setServerAlert] = useState(true);
   
   /*Defining a variable to hold the href in the nav drop down menu*/
 
@@ -36,6 +41,7 @@ export const Navigation = ({ status, setStatus }) => {
    */
 
   const [categories, setCategories] = useState(null);
+  
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -54,6 +60,22 @@ export const Navigation = ({ status, setStatus }) => {
     fetchCategories();
   }, []);
 
+  /**
+   * This useEffect checks to see if the backEnd is woken up. If it
+   * still asleep, the alert will stay red and tell the user that
+   * the server is down. If the server is up, the alert will turn 
+   * green.
+   */
+
+  useEffect(() => {
+    if (!categories){
+      setServerAlert(true);
+    } else{
+      setServerAlert(false);
+    }
+  }
+  , [categories]);
+
   return ( 
     /*Desktop navbar*/
     <div className="browserMobileNav">
@@ -63,14 +85,16 @@ export const Navigation = ({ status, setStatus }) => {
         </Link>
         <nav>
           <ul>
+            <li className={serverAlert ? 'serverAlertIcon red' : "serverAlertIcon green"}>
+              <WarningAmberIcon />
+            </li>
             <li className="hoverLink">
               <Link to="/">Home</Link>
             </li>
             <li>
               <NavDropdown title="Flavors">
-
-              {/*Here we dynamically render the flavor categories, and set each category with its respective link*/}
-
+                {/* Here we dynamically render the flavor categories, and set each category with its respective link */
+                }
                 <NavDropdown.Item href="/categories" rel="prefetch">All Categories</NavDropdown.Item>
                 {categories &&
                   categories.map(
@@ -86,22 +110,24 @@ export const Navigation = ({ status, setStatus }) => {
               </NavDropdown>
             </li>
             <li className="hoverLink">
-
-            {/*This link saves the search params. This is used to automatically scroll to the contact component on the home page. See: Home page*/}
-
+              {/* This link saves the search params. This is used to automatically scroll to the contact component on the home page. See: Home page */
+              }
               <Link to={{ pathname: '/', search: '?source=contact' }}>Contact Us</Link>
             </li>
           </ul>
         </nav>
       </div>
 
-      {/* Mobile navbar version... */}
-
+      {/* Mobile navbar version... */
+      }
       <div className="mobileContainer">
         <Link className='logoLink' to="/">
           <img src={logo} alt="Company Logo" />
         </Link>
         <div className="menuStatus">
+          <li className={serverAlert ? 'serverAlertIcon red' : "serverAlertIcon green"} id="mobileAlert">
+            <WarningAmberIcon />
+          </li>
           <div
             className={status ? 'burgerIcon closed' : 'burgerIcon open'}
             onClick={handleBurgerClick}
@@ -123,30 +149,29 @@ export const Navigation = ({ status, setStatus }) => {
                   </Link>
                 </li>
                 <li>
-                <div className="dropCategory">
-                  <NavDropdown title="Flavors" >
-                    <NavDropdown.Item href="/categories" rel="prefetch">All Categories</NavDropdown.Item>
-                    {categories &&
-                      categories.map(
-                        (category) => (
-                          (link = `/flavors/${category}`),
-                          (
-                            <NavDropdown.Item
-                              href={link}
-                              key={category}
-                              onClick={handleBurgerClick}
-                              rel="prefetch"
-                            >
-                              {category}
-                            </NavDropdown.Item>
+                  <div className="dropCategory">
+                    <NavDropdown title="Flavors" >
+                      <NavDropdown.Item href="/categories" rel="prefetch">All Categories</NavDropdown.Item>
+                      {categories &&
+                        categories.map(
+                          (category) => (
+                            (link = `/flavors/${category}`),
+                            (
+                              <NavDropdown.Item
+                                href={link}
+                                key={category}
+                                onClick={handleBurgerClick}
+                                rel="prefetch"
+                              >
+                                {category}
+                              </NavDropdown.Item>
+                            )
                           )
-                        )
-                      )}
+                        )}
                     </NavDropdown>
-                </div>
+                  </div>
                 </li>
                 <li>
-
                   <Link
                     to={{ pathname: '/', search: '?source=contact' }}
                     onClick={handleBurgerClick}

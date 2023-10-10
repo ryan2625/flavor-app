@@ -1,5 +1,8 @@
 /*CSS for the home component*/
 
+.mainContainer{
+  min-height: 80vh;
+}
 .homeContainer {
   min-height: 30vh;
   display: flex;

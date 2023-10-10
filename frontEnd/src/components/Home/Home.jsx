@@ -83,7 +83,7 @@ export const Home = () => {
   }
 
   return (
-    <div>
+    <div className="mainContainer">
       <ServerAlert  closed={closed} setCloseState={setCloseState}/>
       <HomeCarousel />
       <div className="homeContainer">

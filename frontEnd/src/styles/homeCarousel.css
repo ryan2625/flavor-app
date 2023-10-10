@@ -29,10 +29,6 @@
     padding: 2rem;
 }
 
-.carousel {
-    border-radius: 20px;
-}
-
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -43,6 +39,35 @@
     }
 }
 
+/* Media Queries on carousel for improved CLS in navigation */
+
+@media (min-width:1500px){
+    .carousel {
+        min-height: 55vh;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width:1500px){
+    .carousel {
+        min-height: 30vh;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width:1000px){
+    .carousel {
+        min-height: 30vh;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width:750px){
+    .carousel {
+        min-height: 20vh;
+        border-radius: 20px;
+    }
+}
 @media (max-width: 630px) {
     .sliderLinks > p,
     .sliderLinks > h3 {
@@ -53,5 +78,10 @@
     .carousel-control-next, .carousel-control-prev {
         width: 30% !important;
         transform: scale(.5);
+    }
+
+    .carousel {
+        min-height: 10vh;
+        border-radius: 20px;
     }
 }

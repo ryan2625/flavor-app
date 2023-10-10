@@ -125,13 +125,14 @@ export const GetQuote = () => {
           name="capability"
           value={formData.capability}
           onChange={handleDropdownChange}
+          aria-label="select-capability-menu" 
         >
-          <option value={""} disabled>
+          <option value={""} aria-label="select-capability" disabled>
             Select a capability
           </option>
-          <option value="Design">Design</option>
-          <option value="Production">Production</option>
-          <option value="Certification">Certification</option>
+          <option value="Design" aria-label="select-design">Design</option>
+          <option value="Production" aria-label="select-productions">Production</option>
+          <option value="Certification" aria-label="select-certifications">Certification</option>
         </select>
         <textarea
           className="formTextarea"
@@ -148,6 +149,7 @@ export const GetQuote = () => {
           name="formCheckbox"
           checked={formData.updates}
           onChange={handleCheckboxChange}
+          aria-label="checkbox-for-updates"
         />
         <button className="formButton">Get a Quote</button>
         {success && (

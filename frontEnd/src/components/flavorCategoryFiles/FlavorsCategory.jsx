@@ -16,7 +16,9 @@ import food3 from './food_3.avif';
 
 export const FlavorsCategory = () => {
 
-  let categoryLink;
+  const [message, setMessage] = useState(null);
+
+  const [categories, setCategories] = useState(null);
 
   let foodImages = [food1, food2, food3];
 
@@ -27,7 +29,19 @@ export const FlavorsCategory = () => {
     return index;
   }
 
-  const [categories, setCategories] = useState(null);
+  /**
+   * If the server hasn't retrieved the category data yet, then 
+   * a message telling the user to wait for the server to wake up.
+   * is displayed.
+   */
+
+  function checkMessage(){
+    if (!categories){
+      setMessage("The server is waking up, please wait a moment for the categories to load...");
+    } else{
+      setMessage(null);
+    }
+  }
 
   /**
    * 
@@ -66,6 +80,27 @@ export const FlavorsCategory = () => {
       }, 150);
       
     }, []);
+
+    /**
+     *  
+     *  This use effect sets the message only if the cateogories are
+     *  null and 1.5 seconds have passed. It displays the message
+     *  only after 1.5 seconds to prevent the message from displaying
+     *  when the server is online but the categories have not been
+     *  retrieved yet.
+     * 
+     */
+
+
+    useEffect(() => {
+      let timer;
+      if (!categories) {
+        timer = setTimeout(checkMessage, 1500);
+      } else {
+        setMessage(null); 
+      }
+      return () => clearTimeout(timer); 
+    }, [categories]);
   
 
   return (
@@ -75,10 +110,13 @@ export const FlavorsCategory = () => {
         <h1>
           All Categories
         </h1>
+        <h3>
+          {message}
+        </h3>
           {/*Dynamically render the categories and set the link to the corresponding flavors page*/}
           {categories &&
             categories.map((category) => {
-              categoryLink = `/flavors/${category}`;
+              let categoryLink = `/flavors/${category}`;
               let containerStyle = {
                 backgroundImage: `url(${foodImages[getRandomPicture()]})`,
                 backgroundSize: 'cover',

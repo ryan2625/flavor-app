@@ -8,7 +8,7 @@ const CategoriesContext = createContext();
 
 export const CategoriesProvider = ({ children }) => {
 
-    const [categories, setCategories] = useState([]);
+    const [categories, setCategories] = useState(null);
 
     return (
         <CategoriesContext.Provider value={{ categories, setCategories }}>

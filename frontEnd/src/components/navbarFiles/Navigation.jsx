@@ -61,7 +61,7 @@ export const Navigation = ({ status, setStatus }) => {
         console.log(error);
       }
     };
-
+    console.log(serverAlert)
     fetchCategories();
   }, []);
 

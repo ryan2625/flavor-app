@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useCategories } from '../../contexts/categoriesContext';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -18,6 +19,10 @@ import './../../styles/navbar.css';
  * 
  */
 export const Navigation = ({ status, setStatus }) => {
+
+  /* Grabbing the context for the categories*/
+
+  const { categories, setCategories } = useCategories();
 
   /*Defining a variable to hold the status of the server*/
 
@@ -38,9 +43,9 @@ export const Navigation = ({ status, setStatus }) => {
   /**
    * This use effect fetches all the categories from the backend and saves them in the categories state,
    * then dynamically renders them in the drop down menu.
+   * Note: The web app only makes GET requests and the database will not be receiving anymore
+   * flavor or flavor category data. This is why this useEffect hook and others have an empty dependency array.
    */
-
-  const [categories, setCategories] = useState(null);
   
   useEffect(() => {
     const fetchCategories = async () => {

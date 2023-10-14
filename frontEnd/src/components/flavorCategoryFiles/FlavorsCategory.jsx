@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GetQuote } from '../GetQuote';
+import { useCategories } from '../../contexts/categoriesContext';
 import '../../styles/flavorsCategory.css';
 import food1 from './food_1.avif';
 import food2 from './food_2.avif';
@@ -18,7 +19,7 @@ export const FlavorsCategory = () => {
 
   const [message, setMessage] = useState(null);
 
-  const [categories, setCategories] = useState(null);
+  const { categories } = useCategories();
 
   let foodImages = [food1, food2, food3];
 
@@ -42,31 +43,6 @@ export const FlavorsCategory = () => {
       setMessage(null);
     }
   }
-
-  /**
-   * 
-   * This useEffect hook makes a GET request to the backend at the path /flavors/Categories. It then sets the categoriesArray 
-   * to be rendered by the component. Note: The web app only makes GET requests and the database will not be receiving anymore
-   * flavor or flavor category data. This is why this useEffect hook and others have an empty dependency array.
-   * 
-   */
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const response = await fetch('https://mern-flavor-app.onrender.com/api/flavors/Categories');
-        if (response.ok) {
-          const categoriesArray = await response.json();
-          setCategories(categoriesArray);
-        } else {
-          console.log(`Failed to fetch categories. Status: ${response.status}`);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchCategories();
-  }, []);
 
     /**
  * This useEffect hook scrolls the page to the top of the page when the component mounts. this ensures the user does not enter into a route with the page scrolled down.

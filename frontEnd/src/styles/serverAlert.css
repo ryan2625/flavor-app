@@ -49,4 +49,8 @@
     .warning{
         padding-top: 3rem;
     }
+
+    .warning{
+        width: 90%;
+    }
 }

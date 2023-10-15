@@ -100,14 +100,20 @@ export const Navigation = ({ status, setStatus }) => {
               <NavDropdown title="Flavors">
                 {/* Here we dynamically render the flavor categories, and set each category with its respective link */
                 }
-                <NavDropdown.Item href="/categories" rel="prefetch">All Categories</NavDropdown.Item>
+                <NavDropdown.Item  rel="prefetch">
+                  <Link to="/categories">
+                    All Categories
+                  </Link>
+                  </NavDropdown.Item>
                 {categories &&
                   categories.map(
                     (category) => (
                       (link = `/flavors/${category}`),
                       (
-                        <NavDropdown.Item href={link} key={category} rel="prefetch">
-                          {category}
+                        <NavDropdown.Item key={category} rel="prefetch">
+                          <Link to={link}>
+                            {category}
+                          </Link>
                         </NavDropdown.Item>
                       )
                     )
@@ -156,20 +162,24 @@ export const Navigation = ({ status, setStatus }) => {
                 <li>
                   <div className="dropCategory">
                     <NavDropdown title="Flavors" >
-                      <NavDropdown.Item href="/categories" rel="prefetch">All Categories</NavDropdown.Item>
+                        <Link 
+                        to="/categories"
+                        rel="prefetch"
+                        onClick={handleBurgerClick}>
+                          All Categories
+                        </Link>
                       {categories &&
                         categories.map(
                           (category) => (
                             (link = `/flavors/${category}`),
                             (
-                              <NavDropdown.Item
-                                href={link}
+                                <Link 
+                                to={link}
                                 key={category}
                                 onClick={handleBurgerClick}
-                                rel="prefetch"
-                              >
-                                {category}
-                              </NavDropdown.Item>
+                                rel="prefetch">
+                                   {category}
+                                </Link>
                             )
                           )
                         )}

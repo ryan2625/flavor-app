@@ -136,9 +136,9 @@ export const Navigation = ({ status, setStatus }) => {
           <img src={logo} alt="Company Logo" />
         </Link>
         <div className="menuStatus">
-          <li className={serverAlert ? 'serverAlertIcon red' : "serverAlertIcon green"} id="mobileAlert">
+          <div className={serverAlert ? 'serverAlertIcon red' : "serverAlertIcon green"} id="mobileAlert">
             <WarningAmberIcon />
-          </li>
+          </div>
           <div
             className={status ? 'burgerIcon closed' : 'burgerIcon open'}
             onClick={handleBurgerClick}

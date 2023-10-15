@@ -82,7 +82,10 @@
 @media (max-width: 550px){
     .categoryFlavors{
         flex-direction: column;
+        justify-content: flex-start;
     }
+
+
 
     .backArrow{
         top: 100px;

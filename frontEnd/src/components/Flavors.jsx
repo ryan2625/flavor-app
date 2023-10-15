@@ -64,8 +64,8 @@ export const Flavors = () => {
       <div className="categoryContainer">
         <div className="categoryFlavors">
           <div className="backArrow">
-            <Link to="/categories">
-              <ArrowBackIcon/>
+            <Link to="/categories" aria-label="Return to all categories page">
+              <ArrowBackIcon />
             </Link>
           </div>
           <h1 className="categoryHeader">All {category} Flavors</h1>

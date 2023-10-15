@@ -13,4 +13,9 @@ This prevents the page from refreshing and is a better approach for performance 
 
 1. The heading (i.e All Meat Flavors) changes before the data changes due to the async function, so it very briefly displays the wrong data 
 
-2. Affects the CLS in mobile versions causing the Quote form to jump up and down the screen (fixed)
+Fixed: setFlavors(null) when Flavors.jsx is rendered
+Implement: Spinning circle to indicate data is being fetched. While flavors is null, conditionally render the circle.
+
+2. Affects the CLS in mobile versions causing the Quote form to jump up and down the screen.
+
+Fixed: Set min height of categoryFlavors to 100vh instead of setting min height of categoryContainer to 100vh.

@@ -1,0 +1,16 @@
+When we render a Flavor.jsx component (A page that retrieves all of the flavors associated with a specific category) by clicking the category in the Flavors dropdown in the navbar, there are two approaches.
+
+We can either use the NavDropdown.Item anchor tag in the React Bootstrap library to navigate to the page, causing the page to refresh
+
+OR 
+
+We can use the NavDropdown.Item tag and use the 'as' props and set it to the Link component 
+
+i.e
+<NavDropdown.Item  as={Link} to="/categories">    
+
+This prevents the page from refreshing and is a better approach for performance as it only rerenders that specific component and not the entire page. The problem is that 
+
+1. The heading (i.e All Meat Flavors) changes before the data changes due to the async function, so it very briefly displays the wrong data 
+
+2. Affects the CLS in mobile versions causing the Quote form to jump up and down the screen (fixed)

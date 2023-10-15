@@ -100,24 +100,24 @@ export const Navigation = ({ status, setStatus }) => {
               <NavDropdown title="Flavors">
                 {/* Here we dynamically render the flavor categories, and set each category with its respective link */
                 }
-                <NavDropdown.Item  rel="prefetch">
-                  <Link to="/categories">
+                <NavDropdown.Item  as={Link} rel="prefetch" to="/categories">    
                     All Categories
-                  </Link>
-                  </NavDropdown.Item>
+                </NavDropdown.Item>
                 {categories &&
                   categories.map(
-                    (category) => (
-                      (link = `/flavors/${category}`),
-                      (
-                        <NavDropdown.Item key={category} rel="prefetch">
-                          <Link to={link}>
-                            {category}
-                          </Link>
-                        </NavDropdown.Item>
+                    (category) => {
+                      let link = `/flavors/${category}`;
+                      return(
+            
+                           <NavDropdown.Item  
+                           as={Link} 
+                           rel="prefetch" 
+                           to={link}
+                           key={category}>
+                           {category}
+                            </NavDropdown.Item>
                       )
-                    )
-                  )}
+                       } )}
               </NavDropdown>
             </li>
             <li className="hoverLink">

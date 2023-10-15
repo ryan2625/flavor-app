@@ -26,6 +26,7 @@ export const Flavors = () => {
   */
 
   useEffect(() => {
+    setFlavors(null);
     const fetchCategoryFlavor = async () => {
       try {
         const response = await fetch(`https://mern-flavor-app.onrender.com/api/flavors/${category}`);
@@ -41,7 +42,7 @@ export const Flavors = () => {
     };
 
     fetchCategoryFlavor();
-  }, [] );
+  }, [category] );
 
   /**
  * This useEffect hook scrolls the page to the top of the page when the component mounts. this ensures the user does

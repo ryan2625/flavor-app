@@ -3,7 +3,6 @@
 .categoryContainer {
     padding: 2rem;
     display: flex;
-    min-height: 100vh;
 }
 
 .categoryContainer > div:nth-of-type(2) {
@@ -15,10 +14,12 @@
 
 .categoryFlavors {
     flex: 0 0 60%;
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: flex-start;
 }
 
 .categoryFlavors > div {
@@ -30,7 +31,7 @@
     align-items: center;
     border: 1px solid black;
     border-radius: 10px;
-    padding: .5rem
+    padding: .5rem;
 }
 
 .individualFlavors li {
@@ -46,6 +47,7 @@
     width: 100%;
     text-decoration: underline;
     text-align: center;
+    height: 48px;
 }
 
 .backArrow{

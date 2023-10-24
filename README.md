@@ -1,20 +1,15 @@
-# flavor-app
-A Responsive'flavor' website
+A Responsive 'Flavor' Website
 
 Stack: MongoDB, Express, React, and Node.
 
-  A website that dynamically displays different flavors based on
-their category. This app is built using the MERN stack and 
-holds both a user's email info in the database as well as a list 
-of flavor and category objects. This app was created largely over
-the course of 3 days for NLU's (National Louis University) coding 
-challenge with a few small updates after this time.
+This website dynamically displays different flavors based on their category. The app is built using the MERN stack and stores a user's email information in the database, along with a list of flavor and category objects. This app was developed in 3 days for the NLU (National Louis University) coding challenge, with a few minor updates made afterward.
 
-  This branch holds the changes that corrected the paths to host the server and client on Render.com
- 
-  Author: Ryan Freas
-  Created: 9/27/23
-  
-Link: 
+The app is accessible and employs several optimization techniques with the help of Lighthouse such as using modern image formats like .avif, prefetching content, using a global context to prevent redundant API calls, and caching CSS styles.
 
-https://mern-flavor-site.onrender.com/
+This project is hosted on the 'individual' plan offered by Render.com. This plan provides approximately 512 MB of RAM and 0.1 CPU, which may lead to occasional suboptimal performance.
+
+Author: Ryan Freas
+
+Created: September 27, 2023
+
+Link: [MERN flavor app](https://mern-flavor-site.onrender.com/)

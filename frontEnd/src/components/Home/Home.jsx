@@ -52,7 +52,7 @@ export const Home = () => {
 
   /**
    * This use effect checks the current date. If the cached date is more than 
-   * an hour old, it will set the closed state to false, meaning the user will
+   * 15 min old, it will set the closed state to false, meaning the user will
    * see the warning again.
    */
 

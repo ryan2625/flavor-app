@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const dotenv = require('dotenv');
-const flavorRoutes = require('../routes/flavors');
-const quoteRoutes = require('../routes/quotes');
+const flavorRoutes = require('./routes/flavors');
+const quoteRoutes = require('./routes/quotes');
 const cors = require('cors');
 
 /**

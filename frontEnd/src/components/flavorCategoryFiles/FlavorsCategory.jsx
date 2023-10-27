@@ -100,7 +100,7 @@ export const FlavorsCategory = () => {
                 backgroundRepeat: 'no-repeat',
               };
               return (
-                <Link key={category} to={categoryLink}>
+                <Link key={category} to={categoryLink} className='flavor-link'>
                   <div className="categoryItem" style={containerStyle}>
                     <h3>{category}</h3>
                   </div>

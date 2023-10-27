@@ -125,6 +125,9 @@ export const Navigation = ({ status, setStatus }) => {
               }
               <Link to={{ pathname: '/', search: '?source=contact' }}>Contact Us</Link>
             </li>
+            <li className="hoverLink">
+              <Link to="/reviews">Reviews</Link>
+            </li>
           </ul>
         </nav>
       </div>

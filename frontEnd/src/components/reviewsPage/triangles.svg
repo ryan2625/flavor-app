@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" width="134.5" height="77.75" viewBox="-150 0 269 155.5"><defs><style>
+      .cls-1 {
+        fill: #326295;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #ececed;
+      }
+
+      .cls-3 {
+        fill: #c5c6c6;
+      }
+
+      .cls-4 {
+        fill: #006b77;
+      }
+
+      .cls-5 {
+        fill: #d9dada;
+      }
+
+      .cls-6 {
+        fill: #b1b2b3;
+      }
+
+      .cls-7 {
+        fill: #e83865;
+      }
+      
+    </style></defs><title>triangle-back</title><polygon class="cls-2" points="124.767 24.221 124.767 48.091 83.425 24.222 104.096 12.287 124.767 24.221"></polygon><polygon class="cls-5" points="104.096 12.287 124.767 24.221 124.767 0.353 104.096 12.287"></polygon><polygon class="cls-1" points="104.096 60.025 83.425 71.959 83.425 48.091 104.096 60.025"></polygon><polygon class="cls-1" points="104.096 131.63 83.425 143.565 83.425 119.696 104.096 131.63"></polygon><polygon class="cls-6" points="62.754 107.762 83.425 119.696 83.425 95.827 62.754 107.762"></polygon><polygon class="cls-2" points="62.754 107.762 42.083 119.696 42.083 95.827 62.754 107.762"></polygon><polygon class="cls-2" points="0.74 119.696 21.412 131.63 21.412 107.762 0.74 119.696"></polygon><polygon class="cls-1" points="42.083 95.827 62.754 107.762 62.754 83.893 42.083 95.827"></polygon><polygon class="cls-5" points="62.754 83.893 62.754 60.024 42.083 71.959 42.083 95.827 62.754 83.893"></polygon><polygon class="cls-2" points="21.412 83.893 42.083 95.827 42.083 71.959 21.412 83.893"></polygon></svg>

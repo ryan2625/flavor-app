@@ -20,6 +20,7 @@ import { FlavorsCategory } from './components/flavorCategoryFiles/FlavorsCategor
 import { Navigation } from './components/navbarFiles/Navigation';
 import { Footer } from './components/footerFiles/Footer';
 import { Flavors } from './components/Flavors';
+import { Reviews } from './components/reviewsPage/Reviews';
 
 /*
  * App Component - Main Application Component with Routes
@@ -44,6 +45,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="categories" element={<FlavorsCategory />} />
+          <Route path="reviews" element={<Reviews />} />
           <Route path="flavors/:category" element={<Flavors />} />
         </Routes>
         <Footer />

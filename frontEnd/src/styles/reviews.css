@@ -1,9 +1,10 @@
 .reviews-container{
-    margin: 1.5rem;
+    margin: 3rem;
     padding: 2rem;
     border: 2px solid rgba(0, 0, 0, 0.617);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     position: relative;
+    max-width: 1400px;
 }
 
 .review-stripe::before{
@@ -13,30 +14,29 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: inherit; /* Inherit the background color of the container */
-    transform: skewY(-5deg); /* Adjust the skew angle as needed */
+    background-color: #326295;
+    transform: skewY(-5deg); 
     transform-origin: 0;
 }
 
 .review-stripe::after {
     content: '';
     position: absolute;
-    bottom: -100px;
+    bottom: -135px;
     left: 0;
     width: 100%;
-    height: 100px;
-    background-color: #fff; /* White background color */
-    transform: skewY(-5deg); /* Match the skew angle of the ::before element */
+    height: 135px;
+    background-color: #ffffff; 
+    transform: skewY(-5deg); 
     transform-origin: 0;
 }
 
 .review-stripe{
-    margin-top: 10vh;
     position: relative;
-    background-color: #3498db; /* Background color of the container */
-    height: 200px; /* Set the desired height */
+    background-color: #326295;
+    height: 200px; 
     width: calc(100% + 4rem);
-    margin: 15rem -2rem 0;
+    margin: 15rem -2rem 135px;
 }
 
 .reviews-heading > h1{
@@ -62,4 +62,20 @@
     right: 0;
     top: 0;
     z-index: -1;
+}
+
+#add-review{
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 200px;
+    height: 75px;
+}
+
+@media (min-width: 1400px) {
+    .reviews-container{
+        margin: 4rem auto;
+    }
 }

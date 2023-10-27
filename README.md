@@ -6,7 +6,7 @@ This website dynamically displays different flavors based on their category. The
 
 The app is accessible and employs several optimization techniques with the help of Lighthouse such as using modern image formats like .avif, prefetching content, using a global context to prevent redundant API calls, and caching CSS styles.
 
-This project is hosted on the 'individual' plan offered by Render.com. This plan provides approximately 512 MB of RAM and 0.1 CPU, which may lead to occasional suboptimal performance.
+This project is hosted on the 'individual' plan offered by Render.com. This plan provides approximately 512 MB of RAM and 0.1 CPU, which may lead to occasional suboptimal performance. (Update: Now hosted on cyclic.sh for improved performance).
 
 Author: Ryan Freas
 

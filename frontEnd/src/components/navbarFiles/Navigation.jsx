@@ -50,7 +50,7 @@ export const Navigation = ({ status, setStatus }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('https://mern-flavor-app.onrender.com/api/flavors/Categories');
+        const response = await fetch('https://cute-cyan-duck-tie.cyclic.app/api/flavors/Categories');
         if (response.ok) {
           const categoriesArray = await response.json();
           setCategories(categoriesArray);

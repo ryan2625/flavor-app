@@ -24,8 +24,7 @@ export const ServerAlert = ({closed, setCloseState}) => {
             Attention
         </h1>
         <p>
-            This site is hosted on Render.com. It uses the free tier, so the server may take a few seconds
-            to wake up and it may cause performance issues. If the dropdown menu on flavors only shows one category, please wait a little and refresh the page. Here is  <a href='https://render.com/docs/free' id="renderLink">Render.com's documentation</a> which can provide more information.
+            This site is hosted on cyclic.sh. Due to the nature of the service, performance issues may arise. Here is  <a href='https://www.cyclic.sh/pricing/' id="renderLink">cyclic's documentation</a> which can provide more information.
             Thank you!
         </p>
     </div>

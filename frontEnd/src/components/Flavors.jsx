@@ -29,7 +29,7 @@ export const Flavors = () => {
     setFlavors(null);
     const fetchCategoryFlavor = async () => {
       try {
-        const response = await fetch(`https://mern-flavor-app.onrender.com/api/flavors/${category}`);
+        const response = await fetch(`https://cute-cyan-duck-tie.cyclic.app/api/flavors/${category}`);
         if (response.ok) {
           const flavorArray = await response.json();
           setFlavors(flavorArray);

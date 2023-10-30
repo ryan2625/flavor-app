@@ -34,9 +34,13 @@
 .review-stripe{
     position: relative;
     background-color: #326295;
-    height: 200px; 
+    height: 150px; 
     width: calc(100% + 4rem);
     margin: 15rem -2rem 135px;
+}
+
+.reviews-heading > *{
+    color: rgb(69, 69, 69);
 }
 
 .reviews-heading > h1{
@@ -64,7 +68,15 @@
     z-index: -1;
 }
 
+.stars{
+    height: 300px;
+    width: 400px;
+    outline: 1px solid black;
+    margin: 1rem;
+}
+
 #add-review{
+    font-size: 20px;
     position: fixed;
     top: 80%;
     left: 50%;

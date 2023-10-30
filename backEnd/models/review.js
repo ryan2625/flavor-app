@@ -14,22 +14,10 @@ const reviewSchema = new Schema({
     type: String,
     required: true,
   },
-  email: {
-    type: String,
+  stars: {
+    type: Number,
     required: true,
-  },
-  capability: {
-    type: String,
-    required: true,
-  },
-  message: {
-    type: String,
-    required: true,
-  },
-  updates: {
-    type: Boolean,
-    required: true,
-  },
+  }
 });
 
 module.exports = mongoose.model('Review', reviewSchema);

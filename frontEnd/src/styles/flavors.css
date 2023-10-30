@@ -85,7 +85,9 @@
         justify-content: flex-start;
     }
 
-
+    .categoryHeader{
+        margin-bottom: 2rem;
+    }
 
     .backArrow{
         top: 100px;

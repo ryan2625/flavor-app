@@ -5,7 +5,7 @@ import MySvg from "./triangles.svg"
 export const Reviews = () => {
   return (
     <div className='reviews-container'> 
-    <button id="add-review">Add Review</button>
+    <button className='formButton' id="add-review">Add Review</button>
         <img src={MySvg} alt="" />
         <div className="reviews-heading">
             <h1>Our Reviews</h1>
@@ -17,6 +17,15 @@ export const Reviews = () => {
             </p>
         </div>
         <div className="review-stripe"></div>
+        <div className="stars">
+          Here will be the stars info
+        </div>
+        <h2 className="sort-by">
+          Filters
+        </h2>
+        <div className="reviews-grid">
+          asd
+        </div>
     </div>
   )
 }

@@ -1,11 +1,17 @@
-import React from 'react'
+import { useState } from "react"
 import "../../styles/reviews.css"
 import MySvg from "./triangles.svg"
+import ReviewModal from "./ReviewModal"
 
 export const Reviews = () => {
+
+  const [editModal, setModal] = useState(false)
+  
   return (
+    <div className="review-body">
+    {editModal && <ReviewModal setModal={setModal} />}
     <div className='reviews-container'> 
-    <button className='formButton' id="add-review">Add Review</button>
+    <button className='formButton' id="add-review" onClick={() => setModal(true)}>Add Review</button>
         <img src={MySvg} alt="" />
         <div className="reviews-heading">
             <h1>Our Reviews</h1>
@@ -26,6 +32,7 @@ export const Reviews = () => {
         <div className="reviews-grid">
           asd
         </div>
+    </div>
     </div>
   )
 }

@@ -1,0 +1,89 @@
+.review-modal{
+    position: fixed;
+    top: 0%;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-form{
+    display: flex;
+    margin: 0 auto;
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    position: relative;
+    animation: slideIn .75s ease forwards;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-form > h1{
+    text-align: center;
+    width: 100%;
+    margin-top: 6rem;
+}
+
+.review-form > h2{
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.divider{
+    width: 80%;
+    height: 4px;
+    border-radius: 20px;
+    background-color: #e0e0e0;
+    margin: 2rem;
+}
+
+#warning-modal{
+    position: absolute;
+    right: -40px;
+    top: 8px;
+    transform: scale(1.3);
+}
+
+.icon-warning::after{
+    content: "Preset reviews are used as a language filter.";
+    position: absolute;
+    color: white;
+    background-color: black;
+    top: 40px;
+    right: -130px;
+    width: 200px;
+    padding: 1rem;
+    font-size: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+
+.icon-warning:hover::after{
+    opacity: 1;
+}
+
+#close-icon-modal{
+    position: absolute;
+    right: 0;
+    z-index: 999;
+    transform: scale(2);
+    border-radius: 50%;
+    padding: .1rem;
+    margin: 2rem;
+}
+
+@keyframes slideIn {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  

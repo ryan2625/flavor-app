@@ -1,5 +1,4 @@
 .reviews-container{
-    margin: 3rem;
     padding: 2rem;
     border: 2px solid rgba(0, 0, 0, 0.617);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -7,8 +6,12 @@
     max-width: 1400px;
 }
 
+.review-body{
+    padding: 3rem;
+}
+
 .reviews-container > *{
-    color: rgb(69, 69, 69);
+    color: var(--primary-text-color);
 }
 
 .review-stripe::before{
@@ -44,7 +47,7 @@
 }
 
 .reviews-heading > *{
-    color: rgb(69, 69, 69);
+    color: var(--primary-text-color);
 }
 
 .reviews-heading > h1{
@@ -92,7 +95,10 @@
 }
 
 @media (min-width: 1400px) {
-    .reviews-container{
-        margin: 4rem auto;
+
+    .review-body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

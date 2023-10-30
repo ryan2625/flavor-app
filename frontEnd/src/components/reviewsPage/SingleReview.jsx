@@ -9,8 +9,6 @@ function SingleReview(props) {
 
     const [reviewPreset, setPreset] = useState(data3)
 
-    const [rating, setRating] = useState(0)
-
     const [imageSize, setImageSize] = useState(null)
 
 
@@ -21,10 +19,10 @@ function SingleReview(props) {
                 setPreset(data1)
                 break;
             case "Keisha Smith":
-                setPreset(data2)
+                setPreset(data3)
                 break;
             case "Mike Johnson":
-                setPreset(data3)
+                setPreset(data2)
                 break;
         }
     }, [props.preset])
@@ -33,7 +31,7 @@ function SingleReview(props) {
         if (props.preview) {
             setImageSize("100px")
         } else {
-            setImageSize("250px")
+            setImageSize("200px")
         }
     }, [])
 

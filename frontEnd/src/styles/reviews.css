@@ -82,7 +82,7 @@
     margin: 1rem;
 }
 
-#add-review{
+.add-review{
     font-size: 20px;
     position: fixed;
     top: 80%;

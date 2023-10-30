@@ -15,6 +15,10 @@ function ReviewModal(props) {
 
     const [color, setColor] = useState("#dbe5ff")
 
+    const [rating, setRating] = useState(0)
+
+    const [fullName, setFullName] = useState("John Doe")
+
     useEffect(() => {
         document.body.style.overflow = 'hidden';
     }, [])
@@ -24,10 +28,29 @@ function ReviewModal(props) {
         setColor(selectedValue);
       };
 
+    const handleRating = (rate) => {
+        setRating(rate)
+    }
+
+    function handleSelect(eventKey) {
+        setFullName(eventKey)
+    }
+
     function handleModal() {
         document.body.style.overflow = 'visible';
         props.setModal(false)
     }
+
+    function handleClick() {
+        const review = {
+            fullName,
+            color,
+            rating,
+            date : currentDate
+        }
+        console.log(review)
+    }
+
 
   return (
     <div className='review-modal'>
@@ -41,7 +64,8 @@ function ReviewModal(props) {
             <div className="rater">
             <h2>Rating:</h2>
             <Rating 
-            fillColorArray={['#F00101', '#F57300', '#F5C900', '#BAF000', '#00F501']} />
+            fillColorArray={['#F00101', '#F57300', '#F5C900', '#BAF000', '#00F501']}
+            onClick={handleRating} />
             <h2>Choose color:</h2>
             <Form.Select 
             aria-label="Default select example"
@@ -55,32 +79,36 @@ function ReviewModal(props) {
             </Form.Select>
             </div>
             <div className="divider"></div>
-            <h2>Choose your review sample
-                 <div className="icon-warning">
+            <h2>
+            <div className="icon-warning">
                     <WarningAmberIcon id="warning-modal" /> 
-                </div>
+            </div>
+                Choose your review sample
             </h2>
             <Tabs
-                defaultActiveKey="option1"
+                defaultActiveKey="John Doe"
                 id="fill-tab-example"
+                onSelect={handleSelect}
                 className="mb-3"
                 fill
                 >
-                <Tab eventKey="option1" title="John Doe">
+                <Tab eventKey="John Doe" title="John Doe">
                     <SingleReview 
                     preset="John Doe"
                     preview={true}
                     color={color}
-                    currentDate={currentDate}/>
+                    currentDate={currentDate}
+                    />
                 </Tab>
-                <Tab eventKey="option2" title="Keisha Smith">
+                <Tab eventKey="Keisha Smith" title="Keisha Smith">
                     <SingleReview 
                     preset="Keisha Smith" 
                     preview={true}
                     color={color}
-                    currentDate={currentDate}/>
+                    currentDate={currentDate}
+                    />
                 </Tab>
-                <Tab eventKey="option3" title="Mike Johnson">
+                <Tab eventKey="Mike Johnson" title="Mike Johnson" >
                     <SingleReview 
                     preset="Mike Johnson" 
                     preview={true}
@@ -88,7 +116,7 @@ function ReviewModal(props) {
                     currentDate={currentDate}/>
                 </Tab>
             </Tabs>
-            <button className="create">Add Review!</button>
+            <button className="formButton review-button" onClick={handleClick}>Add Review!</button>
         </div>
     </div>
   )

@@ -63,7 +63,7 @@
     color: white;
     background-color: black;
     top: 40px;
-    right: -130px;
+    left: -120px;
     width: 200px;
     padding: 1rem;
     font-size: 20px;
@@ -81,8 +81,8 @@
     max-height: 50px;
 }
 
-.create{
-    margin-top: 2rem;
+.review-button{
+    padding: 1.3rem;
 }
 
 #drop1{
@@ -103,8 +103,8 @@
 
 #warning-modal{
     position: absolute;
-    right: -40px;
-    top: 8px;
+    left: -40px;
+    top: 4px;
     transform: scale(1.3);
 }
 

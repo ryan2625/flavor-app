@@ -11,7 +11,10 @@ export const Reviews = () => {
     <div className="review-body">
     {editModal && <ReviewModal setModal={setModal} />}
     <div className='reviews-container'> 
-    <button className='formButton' id="add-review" onClick={() => setModal(true)}>Add Review</button>
+    <button className='formButton add-review' 
+    onClick={() => setModal(true)}>
+      Add Review
+    </button>
         <img src={MySvg} alt="" />
         <div className="reviews-heading">
             <h1>Our Reviews</h1>

@@ -6,9 +6,25 @@
     object-position: 60% 100%;
 }
 
+.pfp{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.pfp-deco{
+    height:75px;
+    width: 3px;
+    background-color: rgba(0, 0, 0, 0.464);
+}
+
 .single-review{
     margin: 1rem;
     padding: 1rem;
     border: 2px solid #000000;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }

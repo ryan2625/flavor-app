@@ -17,6 +17,14 @@ const reviewSchema = new Schema({
   stars: {
     type: Number,
     required: true,
+  },
+  color: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: String,
+    required: true,
   }
 });
 

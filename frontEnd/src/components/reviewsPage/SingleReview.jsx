@@ -13,6 +13,7 @@ function SingleReview(props) {
 
     const [imageSize, setImageSize] = useState(null)
 
+
     useEffect(() => {
         console.log("PRESET: " + props.preset.description)
         switch (props.preset) {
@@ -37,13 +38,18 @@ function SingleReview(props) {
     }, [])
 
   return (
-    <div className="single-review">
+    <div className="single-review" 
+    style={{ backgroundColor: props.color}}>
         <div className="pfp">
             <img src={reviewPreset.image} alt="" style={{ width: imageSize, height: imageSize }} />
-        </div>
+            <div className="pfp-deco"></div>
         <h3>
             {reviewPreset.name}
         </h3>
+        </div>
+        <h5>
+            {props.currentDate}
+        </h5>
         <div className="stars-review">
             {props.preview ? null : <Rating /> }
         </div>

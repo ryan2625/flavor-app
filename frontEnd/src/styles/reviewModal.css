@@ -15,13 +15,19 @@
     display: flex;
     margin: 0 auto;
     background-color: white;
-    width: 80%;
+    width: 90%;
     height: 90%;
     position: relative;
     animation: slideIn .75s ease forwards;
     flex-direction: column;
     align-items: center;
     border: 3px solid rgb(0, 0, 0);
+}
+
+.rater{
+    display: flex;
+    gap: 3rem;
+    align-items: center;
 }
 
 .review-form > h1{
@@ -35,6 +41,10 @@
     margin-bottom: 2rem;
 }
 
+.rater > h2{
+    white-space: nowrap;
+}
+
 .divider{
     width: 80%;
     height: 4px;
@@ -45,13 +55,6 @@
 
 .tab-content {
     width: 80%;
-}
-
-#warning-modal{
-    position: absolute;
-    right: -40px;
-    top: 8px;
-    transform: scale(1.3);
 }
 
 .icon-warning::after{
@@ -71,6 +74,38 @@
 
 .icon-warning:hover::after{
     opacity: 1;
+    z-index: 99;
+}
+
+.rater > select{
+    max-height: 50px;
+}
+
+.create{
+    margin-top: 2rem;
+}
+
+#drop1{
+    background-color: #ffd5ff;
+}
+
+#drop2{
+    background-color: #d6fff1
+}
+
+#drop3{
+    background-color: #dbdbdb;
+}
+
+#drop4{
+    background-color: #dbe5ff;
+}
+
+#warning-modal{
+    position: absolute;
+    right: -40px;
+    top: 8px;
+    transform: scale(1.3);
 }
 
 #close-icon-modal{

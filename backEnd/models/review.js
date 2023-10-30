@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 /**
- * Quote Model
+ * Review Model
  *
- * This module defines the Mongoose schema and model for storing quote information in the database.
+ * This module defines the Mongoose schema and model for storing review information in the database.
  * 
  */
 

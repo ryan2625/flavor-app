@@ -7,6 +7,10 @@
     max-width: 1400px;
 }
 
+.reviews-container > *{
+    color: rgb(69, 69, 69);
+}
+
 .review-stripe::before{
     content: '';
     position: absolute;
@@ -84,6 +88,7 @@
     z-index: 99;
     width: 200px;
     height: 75px;
+    color: white;
 }
 
 @media (min-width: 1400px) {

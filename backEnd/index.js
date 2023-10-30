@@ -4,6 +4,7 @@ const app = express();
 const dotenv = require('dotenv');
 const flavorRoutes = require('./routes/flavors');
 const quoteRoutes = require('./routes/quotes');
+const reviewRoutes = require('./routes/review');
 const cors = require('cors');
 
 /**
@@ -26,6 +27,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/flavors', flavorRoutes);
 app.use('/api/quote', quoteRoutes);
+app.use("/api/reviews", reviewRoutes)
 
 // Connect to the MongoDB database
 mongoose

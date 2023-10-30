@@ -121,12 +121,12 @@ export const Navigation = ({ status, setStatus }) => {
               </NavDropdown>
             </li>
             <li className="hoverLink">
+              <Link to="/reviews">Reviews</Link>
+            </li>
+            <li className="hoverLink">
               {/* This link saves the search params. This is used to automatically scroll to the contact component on the home page. See: Home page */
               }
               <Link to={{ pathname: '/', search: '?source=contact' }}>Contact Us</Link>
-            </li>
-            <li className="hoverLink">
-              <Link to="/reviews">Reviews</Link>
             </li>
           </ul>
         </nav>

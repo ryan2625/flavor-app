@@ -16,11 +16,12 @@
     margin: 0 auto;
     background-color: white;
     width: 80%;
-    height: 80%;
+    height: 90%;
     position: relative;
     animation: slideIn .75s ease forwards;
     flex-direction: column;
     align-items: center;
+    border: 3px solid rgb(0, 0, 0);
 }
 
 .review-form > h1{
@@ -40,6 +41,10 @@
     border-radius: 20px;
     background-color: #e0e0e0;
     margin: 2rem;
+}
+
+.tab-content {
+    width: 80%;
 }
 
 #warning-modal{

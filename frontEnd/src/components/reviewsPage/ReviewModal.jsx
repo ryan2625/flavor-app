@@ -5,6 +5,7 @@ import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import "../../styles/reviewModal.css"
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import SingleReview from './SingleReview';
 
 function ReviewModal(props) {
 
@@ -41,13 +42,13 @@ function ReviewModal(props) {
                 fill
                 >
                 <Tab eventKey="option1" title="John Doe">
-                    John Doe
+                    <SingleReview preset="John Doe" preview={true}/>
                 </Tab>
                 <Tab eventKey="option2" title="Keisha Smith">
-                    Keisha Smith
+                    <SingleReview preset="Keisha Smith" preview={true}/>
                 </Tab>
                 <Tab eventKey="option3" title="Mike Johnson">
-                    Mike Johnson
+                    <SingleReview preset="Mike Johnson" preview={true}/>
                 </Tab>
             </Tabs>
         </div>

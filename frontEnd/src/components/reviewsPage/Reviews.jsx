@@ -1,11 +1,16 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import "../../styles/reviews.css"
 import MySvg from "./triangles.svg"
 import ReviewModal from "./ReviewModal"
 import SingleReview from "./SingleReview"
 import Form from 'react-bootstrap/Form';
+import { Rating } from 'react-simple-star-rating'
 
 export const Reviews = () => {
+
+  const myRef = useRef();
+
+  let i = 0;
 
   const [editModal, setModal] = useState(false)
 
@@ -13,13 +18,16 @@ export const Reviews = () => {
 
   const [reviews, setReviews] = useState([])
 
+  const [stars, setStars] = useState([0, 0, 0, 0, 0])
+
   useEffect(() => {
     const fetchReviews = async () =>{
       const response = await fetch("http://localhost:4000/api/reviews")
       const json = await response.json()
       if (response.ok){
         setReviews(json)
-        console.log(json)
+        console.log("Coutring stars with arr" + reviews)
+        countStars(json)
       }
     }
     fetchReviews()
@@ -45,6 +53,37 @@ export const Reviews = () => {
     }
     setReviews(sortedReviews);
   };
+
+  const countStars = (array) => {
+    let starArray = [0, 0, 0, 0, 0]
+    array.forEach((review) => {
+      switch (review.stars) {
+        case 1:
+          starArray[0]++;
+          break;
+        case 2:
+          starArray[1]++;
+          break;
+        case 3:
+          starArray[2]++;
+          break;
+        case 4:
+          starArray[3]++;
+          break;
+        case 5:
+          starArray[4]++;
+          break;
+        default:
+          break;
+      }
+    })
+    setStars(starArray)
+    console.log(starArray)
+  }
+
+  const scrollToView = () => {
+    myRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
   
   return (
     <div className="review-body">
@@ -58,30 +97,42 @@ export const Reviews = () => {
         <div className="reviews-heading">
             <h1>Our Reviews</h1>
             <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium voluptas labore dolorem amet, voluptatem aperiam quod cumque dolorum earum similique animi ipsum optio dolore sint odio doloremque eius distinctio et.
+            Our customers are our top priority, and their satisfaction is paramount. We consistently deliver high-quality products and services that exceed their expectations, resulting in glowing reviews. Quality and reliability are at the core of our products, while our customer support team ensures their needs are met promptly. Their trust and loyalty inspire us to maintain high standards and continue delivering innovative solutions.
             </p>
             <p>
-                Amet consectetur adipisicing elit. Dolorum iste vero reprehenderit, quis illo ducimus eveniet doloribus numquam modi ratione facilis. Assumenda odit soluta voluptates a expedita? Voluptatum, labore inventore.
+            We are committed to maintaining the high standards that have earned us these positive reviews and to continue delivering innovative solutions that bring joy and convenience to the lives of our customers.
             </p>
+            <button onClick={scrollToView} id="glow-button">
+              See our reviews
+            </button>
         </div>
         <div className="review-stripe"></div>
-        <div className="stars">
-          Here will be the stars info
-        </div>
-        <h2 className="sort-by">
+        <h2 className="review-headers" ref={myRef}>
+          All Reviews
+        </h2>
+        <div className="sort-by">
           <Form.Select 
           aria-label="Default select example"
-          onChange={handleRatingChange} >
-            <option>Sort By:</option>
+          onChange={handleRatingChange}
+          className="form-bootstrap" >
+          <option value="newest">Filter Results (Default Newest to Oldest):</option>
             <option value="highest">Rating: High to Low</option>
             <option value="lowest">Rating: Low to High</option>
             <option value="newest">Newest to Oldest</option>
             <option value="oldest">Oldest to Newest</option>
           </Form.Select>
-        </h2>
-        <h2 className="review-headers">
-          All Reviews
-        </h2>
+          <div className="stars">
+          {stars.map((star) => {
+              i++;
+              return (
+                <div className="star-container">
+                  <Rating initialValue={i} readonly={true}/>
+                  <h3>Count: {star}</h3>
+                </div>
+              )
+            })}
+        </div>
+        </div>
         <div className="reviews-grid">
           {reviews.map((review) => {
             return(

@@ -7,7 +7,7 @@ import "../../styles/singleReview.css"
 
 function SingleReview(props) {
 
-    const [reviewPreset, setPreset] = useState(data3)
+    const [reviewPreset, setPreset] = useState(data1)
 
     const [imageSize, setImageSize] = useState(null)
 
@@ -45,7 +45,7 @@ function SingleReview(props) {
         </h3>
         </div>
         <h5 className={props.preview ? "" : "date-margin"}>
-            {props.preview ? props.currentDate : props.date}
+            {props.preview ? null : props.date}
         </h5>
         <div className="stars-review">
             {props.preview ? null : <Rating 

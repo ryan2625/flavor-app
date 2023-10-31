@@ -54,7 +54,7 @@ function SingleReview(props) {
             readonly={true}/> }
         </div>
         <p className="review-information">
-            {reviewPreset.description}
+            {props.preview ? reviewPreset.description2 : reviewPreset.description}
         </p>
     </div>
   )

@@ -58,6 +58,12 @@
     letter-spacing: 2px;
 }
 
+.star-container > h3{
+    display: flex;
+    margin: 0rem;
+    align-items: center;
+}
+
 .reviews-heading > p{
     line-height: 35px;
     font-size: larger;

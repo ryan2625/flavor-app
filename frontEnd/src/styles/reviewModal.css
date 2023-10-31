@@ -148,7 +148,25 @@
     }
 
     .review-button{
-        padding: .5rem
-        ;
+        padding: .5rem;
+    }
+
+    .icon-warning::after{
+        top: 40px;
+        left: -50px;
+    }
+
+    
+}
+
+@media (max-width:470px){
+    #warning-modal{
+        top: -273px;
+        left: 15px;
+    }
+
+    .icon-warning::after{
+        top: -241px;
+        left: 5px;
     }
 }

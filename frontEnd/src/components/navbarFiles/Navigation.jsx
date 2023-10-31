@@ -188,6 +188,9 @@ export const Navigation = ({ status, setStatus }) => {
                     </NavDropdown>
                   </div>
                 </li>
+                <li className="hoverLink" onClick={handleBurgerClick}>
+                  <Link to="/reviews">Reviews</Link>
+                </li>
                 <li>
                   <Link
                     to={{ pathname: '/', search: '?source=contact' }}

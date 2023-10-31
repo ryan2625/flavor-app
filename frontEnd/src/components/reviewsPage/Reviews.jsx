@@ -116,7 +116,7 @@ export const Reviews = () => {
           onChange={handleRatingChange}
           className="form-bootstrap"
           size="lg" >
-          <option value="newest">Filter Results</option>
+          <option value="newest">Sort Results:</option>
             <option value="highest">Rating: High to Low</option>
             <option value="lowest">Rating: Low to High</option>
             <option value="newest">Newest to Oldest</option>

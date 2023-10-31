@@ -32,3 +32,25 @@
     flex-direction: column;
     gap: .5rem;
 }
+
+@media (max-width: 650px){
+    .pfp{
+        flex-direction: column;
+    }
+
+    .pfp > div{
+        display: none;
+    }
+
+    .date-margin{
+        align-self: center;
+    }
+
+    .stars-review{
+        align-self: center;
+    }
+
+    .single-review{
+        margin: .5rem 0rem;
+    }
+}

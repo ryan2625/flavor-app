@@ -114,8 +114,9 @@ export const Reviews = () => {
           <Form.Select 
           aria-label="Default select example"
           onChange={handleRatingChange}
-          className="form-bootstrap" >
-          <option value="newest">Filter Results (Default Newest to Oldest):</option>
+          className="form-bootstrap"
+          size="lg" >
+          <option value="newest">Filter Results</option>
             <option value="highest">Rating: High to Low</option>
             <option value="lowest">Rating: Low to High</option>
             <option value="newest">Newest to Oldest</option>
@@ -127,7 +128,7 @@ export const Reviews = () => {
               return (
                 <div className="star-container">
                   <Rating initialValue={i} readonly={true}/>
-                  <h3>Count: {star}</h3>
+                  <h3>({star})</h3>
                 </div>
               )
             })}

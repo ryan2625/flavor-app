@@ -225,6 +225,10 @@
     #glow-button{
         font-size: 23px;
     }
+
+    .review-form{
+        overflow-y: scroll;
+    }
 }
 
 @media (max-width: 515px){

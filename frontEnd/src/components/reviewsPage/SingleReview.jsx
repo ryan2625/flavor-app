@@ -62,7 +62,7 @@ function SingleReview(props) {
             readonly={true}/> }
         </div>
         <p className="review-information">
-            {mobile ? null : reviewPreset.description}
+            {mobile && props.preview ? null : reviewPreset.description}
         </p>
     </div>
   )

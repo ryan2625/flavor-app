@@ -19,6 +19,14 @@ function ReviewModal(props) {
 
     const [fullName, setFullName] = useState("John Doe")
 
+    const [mobile, setMobile] = useState(false)
+
+    useEffect(() => {
+        if (window.innerWidth < 600) {
+            setMobile(true)
+        }
+    }, [])
+
     useEffect(() => {
         document.body.style.overflow = 'hidden';
     }, [])
@@ -103,7 +111,7 @@ function ReviewModal(props) {
             <div className="icon-warning">
                     <WarningAmberIcon id="warning-modal" /> 
             </div>
-                Choose your review sample
+                Choose your review template
             </h2>
             <Tabs
                 defaultActiveKey="John Doe"
@@ -136,7 +144,7 @@ function ReviewModal(props) {
                     currentDate={currentDate}/>
                 </Tab>
             </Tabs>
-            <button className="formButton review-button" onClick={handleClick}>Add Review!</button>
+            <button className={mobile ? "formButton review-button set-order" : "formButton review-button"} onClick={handleClick}>Add Review!</button>
         </div>
     </div>
   )

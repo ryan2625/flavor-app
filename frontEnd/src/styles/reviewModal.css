@@ -172,6 +172,13 @@
         left: -50px;
     }
 
+    .set-order{
+        order: 1;
+    }
+
+    .tab-content{
+        order: 2;
+    }
     
 }
 

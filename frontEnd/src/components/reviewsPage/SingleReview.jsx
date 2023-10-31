@@ -11,6 +11,14 @@ function SingleReview(props) {
 
     const [imageSize, setImageSize] = useState(null)
 
+    const [mobile, setMobile] = useState(false)
+
+    useEffect(() => {
+        if (window.innerWidth < 600) {
+            setMobile(true)
+        }
+    }, [])
+
 
     useEffect(() => {
         switch (props.preset) {
@@ -54,7 +62,7 @@ function SingleReview(props) {
             readonly={true}/> }
         </div>
         <p className="review-information">
-            {props.preview ? reviewPreset.description2 : reviewPreset.description}
+            {mobile ? null : reviewPreset.description}
         </p>
     </div>
   )

@@ -22,7 +22,7 @@ export const Reviews = () => {
 
   useEffect(() => {
     const fetchReviews = async () =>{
-      const response = await fetch("http://localhost:4000/api/reviews")
+      const response = await fetch("https://cute-cyan-duck-tie.cyclic.app/api/reviews")
       const json = await response.json()
       if (response.ok){
         setReviews(json)

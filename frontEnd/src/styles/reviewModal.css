@@ -175,7 +175,7 @@
     
 }
 
-@media (max-width:470px){
+@media (max-width:480px){
     #warning-modal{
         top: -250px;
         left: 15px;
@@ -184,5 +184,10 @@
     .icon-warning::after{
         top: -221px;
         left: 5px;
+    }
+
+    .review-form{
+        height: 100%;
+        width: 100%;
     }
 }

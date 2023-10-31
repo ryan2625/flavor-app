@@ -85,13 +85,22 @@
 .add-review{
     font-size: 20px;
     position: fixed;
-    top: 80%;
+    top: 88%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 99;
     width: 200px;
     height: 75px;
     color: white;
+}
+
+.reviews-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.review-headers{
+    text-align: center;
 }
 
 @media (min-width: 1400px) {

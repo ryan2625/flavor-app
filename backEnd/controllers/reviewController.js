@@ -7,7 +7,7 @@ const Review = require('../models/review');
 
 const getReviews = async (req, res) => {
   try {
-    const reviews = await Review.find({});
+    const reviews = await Review.find().sort({createdAt: -1});
     res.status(200).json(reviews);
   } catch (error) {
     throw error;

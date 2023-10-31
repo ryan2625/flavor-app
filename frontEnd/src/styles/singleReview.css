@@ -19,6 +19,10 @@
     background-color: rgba(0, 0, 0, 0.464);
 }
 
+.date-margin{
+    margin-left: .3rem;
+}
+
 .single-review{
     margin: 1rem;
     padding: 1rem;

@@ -15,7 +15,7 @@ function ReviewModal(props) {
 
     const [color, setColor] = useState("#dbe5ff")
 
-    const [rating, setRating] = useState(0)
+    const [stars, setStars] = useState(0)
 
     const [fullName, setFullName] = useState("John Doe")
 
@@ -29,7 +29,7 @@ function ReviewModal(props) {
       };
 
     const handleRating = (rate) => {
-        setRating(rate)
+        setStars(rate)
     }
 
     function handleSelect(eventKey) {
@@ -41,14 +41,34 @@ function ReviewModal(props) {
         props.setModal(false)
     }
 
-    function handleClick() {
+    async function handleClick() {
+
+        if (stars === 0){
+            alert("Please select a rating")
+            return
+        }
+
         const review = {
             fullName,
             color,
-            rating,
+            stars,
             date : currentDate
         }
-        console.log(review)
+
+        const response = await fetch("http://localhost:4000/api/reviews", {
+            method: "POST",
+            body: JSON.stringify(review),
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        })
+
+        if (response.ok){
+            const json = await response.json()
+            console.log(json)
+            props.setAdded(!props.added)
+            handleModal()
+        }
     }
 
 

@@ -4,7 +4,7 @@ import '../../styles/home.css';
 import { HomeCarousel } from './HomeCarousel';
 import { Contact } from './Contact';
 import { GetQuote } from '../GetQuote';
-import { ServerAlert } from '../ServerAlert';
+import { ServerAlert } from "./ServerAlert";
 
 /**
  * Home Component
@@ -89,7 +89,12 @@ export const Home = () => {
       <div className="homeContainer">
         <div className="companyMessage">
           <h2>Design. Manufacture. Deliver.</h2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada ante in congue. Sed ac ligula libero. Donec id vehicula odio, et ultrices justo. Aenean posuere eget ex ut aliquet. Praesent vulputate, arcu in lacinia sagittis, erat odio cursus lectus, vel rhoncus urna eros a odio. Phasellus ac neque non arcu malesuada mattis. In non ipsum sed purus aliquam gravida non id arcu. Nunc eget purus ex. In hac habitasse platea dictumst. Integer euismod non tellus sit amet volutpat. Donec euismod libero ac eleifend. Vestibulum gravida, nulla in luctus scelerisque, tortor neque tincidunt ligula, at pharetra erat libero sit amet quam.
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada ante in congue. Sed ac ligula libero. Donec id vehicula odio, et ultrices justo. Aenean posuere eget ex ut aliquet. Praesent vulputate, arcu in lacinia sagittis, erat odio cursus lectus, vel rhoncus urna eros a odio. Phasellus ac neque non arcu malesuada mattis. In non ipsum sed purus aliquam gravida non id arcu. Nunc eget purus ex. In hac habitasse platea dictumst. Integer euismod non tellus sit amet volutpat. Donec euismod libero ac eleifend. Vestibulum gravida, nulla in luctus scelerisque, tortor neque tincidunt ligula, at pharetra erat libero sit amet quam.
+          </p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam blanditiis incidunt repellendus nobis cum a, voluptatum non necessitatibus provident perferendis asperiores esse distinctio aspernatur eum? Dolor reprehenderit et saepe hic.
+          </p>
         </div>
         <GetQuote />
       </div>

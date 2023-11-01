@@ -19,8 +19,8 @@ WebFont.load({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <CategoriesProvider>
-        <App />
-      </CategoriesProvider>
+    <CategoriesProvider>
+      <App />
+    </CategoriesProvider>
   </React.StrictMode>
 );

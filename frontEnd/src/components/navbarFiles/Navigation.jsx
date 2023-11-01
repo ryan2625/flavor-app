@@ -11,12 +11,19 @@ import './../../styles/navbar.css';
 /**
  * Navigation Component
  *
- * This component represents the navigation bar and manages the mobile menu's status.
- * It can communicate with App.js to inform whether the mobile menu is open or closed.
- * It also fetches the categories from the backend and renders them in the navigation bar
- * dropdown and mobile menu dropdown. This component could be optimized and refactored
- * futher.
+ * This component represents the navigation bar and manages the 
+ * mobile menu's status.
+ * It can communicate with App.js to inform whether the mobile menu  * is open or closed.
+ * It also fetches the categories from the backend and renders them 
+ * in the navigation bar,
+ * dropdown and mobile menu dropdown. This component could be
+ * optimized and refactored futher if time allows.
  * 
+ * @param {boolean} status - This variable is used to determine 
+ * whether the mobile menu is open or closed.
+ * 
+ * @param {function} setStatus - This function is used to set the
+ * status of the mobile menu
  */
 export const Navigation = ({ status, setStatus }) => {
 

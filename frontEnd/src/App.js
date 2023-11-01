@@ -19,7 +19,7 @@ import { Home } from './components/Home/Home';
 import { FlavorsCategory } from './components/flavorCategoryFiles/FlavorsCategory';
 import { Navigation } from './components/navbarFiles/Navigation';
 import { Footer } from './components/footerFiles/Footer';
-import { Flavors } from './components/Flavors';
+import { Flavors } from './components/FlavorsPage/Flavors';
 import { Reviews } from './components/reviewsPage/Reviews';
 
 /*
@@ -36,6 +36,7 @@ import { Reviews } from './components/reviewsPage/Reviews';
  */
 
 function App() {
+  
   const [status, setStatus] = useState(false);
 
   return (

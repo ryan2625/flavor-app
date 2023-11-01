@@ -3,7 +3,7 @@ const { getReviews, createReviews } = require("../controllers/reviewController")
 
 const router =  express.Router()
 
-/*A simple route to post the get a quote data to the database. Retrieving not needed*/
+/*Routes to create a new review and retrieve all reviews in the database*/
 
 router.post("/", createReviews)
 router.get("/", getReviews)

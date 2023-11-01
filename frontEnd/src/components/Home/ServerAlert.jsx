@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import "../styles/serverAlert.css"
+import "../../styles/serverAlert.css"
 import CloseIcon from '@mui/icons-material/Close';
 
 /**
  * 
- * This component serves as a warning regarding hosting issues with *  Render.com. This component is rendered in the home page.
+ *  This component serves as a warning regarding hosting issues with *  Cyclic.sh. This component is rendered in the home page.
+ *  @param {boolean} closed - This is the state that determines  
+ *  whether or not the warning should be shown.
+ *  @param {function} setCloseState - This is the function that sets * the closed state to true.
  * 
 **/
 

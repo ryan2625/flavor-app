@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { GetQuote } from './GetQuote';
+import { GetQuote } from '../GetQuote';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Spinner from 'react-bootstrap/Spinner';
 import { Link } from 'react-router-dom';
-import '../styles/flavors.css';
+import '../../styles/flavors.css';
 
 /**
  * Flavors Component
@@ -51,9 +52,7 @@ export const Flavors = () => {
  */
 
   useEffect(() => {
-    setTimeout(function() {
-      window.scrollTo(0, 0);
-    }, 300);
+    window.scrollTo(0, 0);
   }, []);
 
 
@@ -68,6 +67,11 @@ export const Flavors = () => {
             </Link>
           </div>
           <h1 className="categoryHeader">All {category} Flavors</h1>
+          {!flavors && (
+            <div className="spinner">
+              <Spinner animation="border" variant="primary" />
+            </div>
+          )}
           {flavors &&
             flavors.map((flavor, index) => (
               <div className="individualFlavors" key={index}>

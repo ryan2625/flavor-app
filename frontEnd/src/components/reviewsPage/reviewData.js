@@ -2,6 +2,12 @@ import image1 from "./stock1.jpg"
 import image2 from "./stock2.jpg"
 import image3 from "./stock3.avif"
 
+/**
+ * Data for the reviews presets. We use presets instead of custom reviews because the website does not have
+ * a language filter to detect profanity and it is not monitored. This is to prevent any inappropriate reviews
+ * from being posted on the website.
+ */
+
 export const data1 = {
     fullName: "John Doe",
     image: image1,

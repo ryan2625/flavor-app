@@ -2,6 +2,10 @@ const Review = require('../models/review');
 
 /**
  * Review Controller
+ * 
+ * Controller functions for handling reviews in the database. Contains a 
+ * GET request that returns the newest created reviews first, and a POST request
+ * that creates new reviews in the database. 
  *
  */
 

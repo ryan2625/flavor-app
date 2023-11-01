@@ -28,7 +28,6 @@
   align-items: center;
   transition: box-shadow 0.3s ease-in-out;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-  transform: skew(-10deg);
 }
 
 .categoryItem h3 {

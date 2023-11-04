@@ -77,7 +77,7 @@
     }
 }
 
-@media (max-width: 1190px) {
+@media (max-width: 1190px), (max-height: 650px) {
     .categoryFlavors {
         margin: 1rem;
         justify-content: center;

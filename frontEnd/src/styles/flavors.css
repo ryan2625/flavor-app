@@ -19,7 +19,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    
+    position: relative;
 }
 
 .categoryFlavors > div {
@@ -52,7 +52,8 @@
 
 .backArrow{
     position: absolute;
-    left: 45px;
+    top: -15px;
+    left: -15px;
     transform: scale(2);
     backdrop-filter: brightness(75%);
     border-radius: 50%;
@@ -61,7 +62,7 @@
 
 .spinner{
     z-index: 99999999; /*Trust me. This value is needed (: */
-    position:fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     translate: translate(-50%, -50%);
@@ -94,6 +95,11 @@
         transform: translate(0%, 0%);
         margin-bottom: 2rem;
     }
+
+    .backArrow{
+        top: -25px;
+        left: -25px;
+    }
 }
 
 @media (max-width: 650px){
@@ -106,8 +112,4 @@
         margin-bottom: 2rem;
     }
 
-    .backArrow{
-        top: 100px;
-        left: 35px;
-    }
 }

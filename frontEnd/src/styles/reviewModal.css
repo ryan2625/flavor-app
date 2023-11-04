@@ -134,7 +134,7 @@
     }
   }
   
-@media (max-width: 800px) {
+@media (max-width: 800px), (max-height: 900px) {
     .rater{
         flex-direction: column;
         gap: .5rem;
@@ -160,18 +160,18 @@
     #warning-modal{
         top: 2px;
     }
-    
-}
-
-@media (max-width: 650px){
-    .divider{
-        margin: .75rem;
-    }
 
     .review-button{
         padding: .35rem;
         margin: .25rem;
         font-size: 22px;
+    }
+    
+}
+
+@media (max-width: 650px), (max-height: 680px) {
+    .divider{
+        margin: .75rem;
     }
 
     .icon-warning::after{
@@ -189,9 +189,9 @@
     
 }
 
-@media (max-width:480px){
+@media (max-width:480px), (max-height: 760px) {
     #warning-modal{
-        top: -250px;
+        top: -245px;
         left: 15px;
     }
 

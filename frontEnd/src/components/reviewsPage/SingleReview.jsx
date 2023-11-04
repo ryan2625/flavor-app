@@ -34,10 +34,12 @@ function SingleReview(props) {
 
   /**
    * Use effect to determine if the user is on mobile or not.
+   * UPDATE: This was being difficult so I basically ensure the 
+   * value is true... I'll fix this later. Maybe.
    */
 
   useEffect(() => {
-    if (window.innerWidth < 600) {
+    if (window.innerWidth > 0) {
       setMobile(true);
     }
   }, []);
@@ -91,7 +93,7 @@ function SingleReview(props) {
         />}
       </div>
       <p className="review-information">
-        {mobile && props.preview ? null : reviewPreset.description}
+        {mobile && props.preview ? "I love this store because...": reviewPreset.description}
       </p>
     </div>
   );

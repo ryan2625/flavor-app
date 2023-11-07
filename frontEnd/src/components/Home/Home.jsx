@@ -84,7 +84,8 @@ export const Home = () => {
 
   return (
     <div className="mainContainer">
-      <ServerAlert  closed={closed} setCloseState={setCloseState}/>
+      {/*I changed hosting, so warning no longer needed*/}
+      { /*<ServerAlert  closed={closed} setCloseState={setCloseState}/> */}
       <HomeCarousel />
       <div className="homeContainer">
         <div className="companyMessage">

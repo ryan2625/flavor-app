@@ -1,4 +1,4 @@
-// formReducer function manages the state of the form data.
+// formReducer function manages the state of the form data. See: GetQuote.jsx
 // It takes the current 'formData' state and an 'action' object as input.
 
 export default function formReducer(formData, action) {

@@ -3,6 +3,9 @@ import "../../styles/serverAlert.css"
 import CloseIcon from '@mui/icons-material/Close';
 
 /**
+ *  EDIT: Server hosting provider changed, so this message is no longer displayed on the home page.
+ *  Originally we used onRender.com to host the site, but now we use cyclic.sh which does not need
+ *  time to 'wake up' the site.
  * 
  *  This component serves as a warning regarding hosting issues with *  Cyclic.sh. This component is rendered in the home page.
  *  @param {boolean} closed - This is the state that determines  

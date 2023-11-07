@@ -22,6 +22,8 @@ export const GetQuote = () => {
     updates: false,
   };
 
+  // See: Reducer in frontEnd/src/reducer/formReducer.jsx
+
   const [formData, dispatch] = useReducer(formReducer, initialState);
 
   /*

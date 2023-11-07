@@ -17,6 +17,7 @@ import '../../styles/flavors.css';
 export const Flavors = () => {
 
   const { category } = useParams();
+  
   const [flavors, setFlavors] = useState(null);
 
   /** 

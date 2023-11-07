@@ -12,7 +12,7 @@ export const CategoriesProvider = ({ children }) => {
 
     return (
         <CategoriesContext.Provider value={{ categories, setCategories }}>
-        {children}
+          {children}
         </CategoriesContext.Provider>
     );
 }

@@ -70,11 +70,6 @@ export const GetQuote = () => {
     }
   };
 
-  /**
-   *  This function handles the input fields on the form
-   *  via the formReducer.
-   */
-
   const handleInputChange = (e) => {
     dispatch({ 
       type: "UPDATE_FORM", 
@@ -83,20 +78,10 @@ export const GetQuote = () => {
     });
   };
 
-    /**
-   *  This function handles the dropdow field on the form
-   *  via the formReducer.
-   */
-
   const handleDropdownChange = (e) => {
     const index = e.target.options[e.target.selectedIndex];
     dispatch({ type: "UPDATE_DROPDOWN", index: index.value });
   };
-
-      /**
-   *  This function handles the checkbox field on the form
-   *  via the formReducer.
-   */
 
   const handleCheckboxChange = () => {
     dispatch({ type: "UPDATE_CHECKBOX" });

@@ -31,7 +31,7 @@ export const Navigation = ({ status, setStatus }) => {
 
   const { categories, setCategories } = useCategories();
 
-  /*Defining a variable to hold the status of the server*/
+  /*Defining a variable to hold the status of the server. See ServerAlert.jsx*/
 
   const [serverAlert, setServerAlert] = useState(true);
   

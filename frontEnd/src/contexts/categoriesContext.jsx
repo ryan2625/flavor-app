@@ -1,7 +1,8 @@
 import { createContext, useState, useContext } from "react";
 
 /**
- *  This context is used to store the categories retrieved from  *  the database. It is set in the Navigation component and used *  in the FlavorsCategory component to prevent redundant API   *  calls.
+ *  This context is used to store the categories retrieved from the database. It is set in the Navigation component and used 
+ *  in the FlavorsCategory component to prevent redundant API calls.
  */
 
 const CategoriesContext = createContext();

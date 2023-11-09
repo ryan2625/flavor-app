@@ -17,6 +17,8 @@ import food3 from './food_3.avif';
 
 export const FlavorsCategory = () => {
 
+  //Used to warn the user if the data is not fetched yet
+
   const [message, setMessage] = useState(null);
 
   const { categories } = useCategories();

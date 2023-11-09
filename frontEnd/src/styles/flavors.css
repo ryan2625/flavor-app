@@ -3,27 +3,21 @@
 .categoryContainer {
     padding: 2rem;
     display: flex;
-}
-
-.categoryContainer > div:nth-of-type(2) {
-    position: fixed;
-    top: 50%;
-    left: 48%;
-    transform: translate(50%, -50%);
+    align-items: flex-start;
+    min-height: 100vh;
 }
 
 .categoryFlavors {
     flex: 0 0 60%;
-    min-height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
     position: relative;
+    min-height: 100vh;
 }
 
 .categoryFlavors > div {
-    flex: 0 0 30%;
+    flex: 0 0 100%;
 }
 
 .individualFlavors {
@@ -50,6 +44,12 @@
     height: 48px;
 }
 
+.searchBar{
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
 .backArrow{
     position: absolute;
     top: -15px;
@@ -68,8 +68,15 @@
     translate: translate(-50%, -50%);
 }
 
+#flavorQuote {
+    position: fixed;
+    top: 50%;
+    left: 48%;
+    transform: translate(50%, -50%);
+}
+
 @media (min-width: 1600px) {
-    .categoryContainer > div:nth-of-type(2) {
+    #flavorQuote {
         position: fixed;
         top: 50%;
         left: 60%;
@@ -78,38 +85,37 @@
 }
 
 @media (max-width: 1190px), (max-height: 650px) {
-    .categoryFlavors {
-        margin: 1rem;
-        justify-content: center;
-        margin-bottom: 2rem;
-    }
 
     .categoryContainer {
         flex-direction: column;
     }
 
-    #flavorQuote {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: translate(0%, 0%);
-        margin-bottom: 2rem;
+    .categoryFlavors {
+        width: 100%;
+        min-height: 100vh;
     }
 
-    .backArrow{
-        top: -25px;
-        left: -25px;
+    #flavorQuote {
+        flex: 0 0 100%;
+        margin-top: 1rem;
+        position: static;
+        top: auto;
+        left: auto;
+        transform: translate(0%, 0%); 
+        align-self: center;
     }
 }
 
 @media (max-width: 650px){
-    .categoryFlavors{
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
+    
     .categoryHeader{
         margin-bottom: 2rem;
+    }
+
+    .backArrow{
+        transform: scale(1.3);
+        top: calc(1rem - 35px);
+        left: calc(1rem - 35px);
     }
 
 }

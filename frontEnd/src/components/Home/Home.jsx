@@ -46,6 +46,9 @@ export const Home = () => {
    * message again for a specified time (see use effect). This state is passed 
    * to the server alert component as a prop to determine whether to show the
    * warning or not.
+   * 
+   * EDIT: Message removed for now, as the hosting
+   * site has changed and the performance has improved.
    */
 
   const [closed, setClose] = useState(localStorage.getItem('closed') || false)
@@ -91,10 +94,10 @@ export const Home = () => {
         <div className="companyMessage">
           <h2>Design. Manufacture. Deliver.</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada ante in congue. Sed ac ligula libero. Donec id vehicula odio, et ultrices justo. Aenean posuere eget ex ut aliquet. Praesent vulputate, arcu in lacinia sagittis, erat odio cursus lectus, vel rhoncus urna eros a odio. Phasellus ac neque non arcu malesuada mattis. In non ipsum sed purus aliquam gravida non id arcu. Nunc eget purus ex. In hac habitasse platea dictumst. Integer euismod non tellus sit amet volutpat. Donec euismod libero ac eleifend. Vestibulum gravida, nulla in luctus scelerisque, tortor neque tincidunt ligula, at pharetra erat libero sit amet quam.
+          At our flavor store, we value our customers' opinions and feedback. That's why we have a dedicated review page where you can share your thoughts and experiences with our products. We believe that reviews are an essential part of the shopping process, as they provide valuable insights and help other customers make informed decisions. Whether you loved our unique and delicious flavors or have suggestions for improvement, we want to hear from you. Your feedback not only helps us grow as a business but also ensures that we continue to provide the best possible flavors for our customers.
           </p>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam blanditiis incidunt repellendus nobis cum a, voluptatum non necessitatibus provident perferendis asperiores esse distinctio aspernatur eum? Dolor reprehenderit et saepe hic.
+            Please see our reviews page to give us feedback. We would love to hear from you! Your review will not only help us grow as a business but also ensure that we continue to provide the best possible flavors for our customers.
           </p>
         </div>
         <GetQuote />

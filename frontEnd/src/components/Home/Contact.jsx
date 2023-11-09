@@ -72,9 +72,7 @@ export const Contact = () => {
       <div className="contactMessage">
         <h1 className="contactUs">CONTACT US</h1>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem, ipsum
-          dolor sit amet consectetur adipisicing elit. Nostrum accusantium
-          expedita modi, facere inventore voluptate cumque quis amet.
+          Want to give us feedback directly? Fill out the form and let us know your thoughts! We would love to hear from you! If you would like to save a review, see the reviews page!
         </p>
       </div>
     </div>

@@ -229,8 +229,8 @@
         font-size: 23px;
     }
 
-    .review-form{
-        overflow-y: scroll;
+    .review-body{
+        padding: 0rem;
     }
 }
 

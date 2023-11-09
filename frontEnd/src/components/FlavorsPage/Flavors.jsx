@@ -20,6 +20,22 @@ export const Flavors = () => {
   
   const [flavors, setFlavors] = useState(null);
 
+  const [arrayDisplay, setArrayDisplay] = useState(null);
+
+  /**
+   *  Logic for search bar. We have an arrayDisplay and a flavors
+   *  array because we want to keep the original array intact,
+   *  as the filter method completely removes elements from the
+   *  array.
+   * 
+   * */
+
+  function handleSearch(e){
+    var seachVal = e.target.value.toLowerCase();
+    var newArr = flavors.filter(flavor => flavor.flavorName.toLowerCase().indexOf(seachVal) > -1)
+    setArrayDisplay(newArr);
+  }
+
   /** 
    *  
    *  This useEffect hook makes a GET request to the backend at the path /flavors/:category. It then renders the flavors
@@ -35,6 +51,7 @@ export const Flavors = () => {
         if (response.ok) {
           const flavorArray = await response.json();
           setFlavors(flavorArray);
+          setArrayDisplay(flavorArray);
         } else {
           console.log(`Failed to fetch categories. Status: ${response.status}`);
         }
@@ -68,13 +85,14 @@ export const Flavors = () => {
             </Link>
           </div>
           <h1 className="categoryHeader">All {category} Flavors</h1>
+          <input type="text" placeholder="Search for flavors" className="searchBar" onChange={handleSearch}/>
           {!flavors && (
             <div className="spinner">
               <Spinner animation="border" variant="primary" />
             </div>
           )}
           {flavors &&
-            flavors.map((flavor, index) => (
+            arrayDisplay.map((flavor, index) => (
               <div className="individualFlavors" key={index}>
                 <ul>
                   <li>{flavor.flavorName}</li>

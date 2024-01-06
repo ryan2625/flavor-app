@@ -11,6 +11,9 @@ This project is hosted on the 'individual' plan offered by Render.com. This plan
 Reviews Page:
 ![Reviews page](./reviews-page.png)
 
+Home Page:
+![Home Page](./home-page.png)
+
 Author: Ryan Freas
 
 Created: September 27, 2023

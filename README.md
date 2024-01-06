@@ -9,7 +9,7 @@ The app is accessible and employs several optimization techniques with the help 
 This project is hosted on the 'individual' plan offered by Render.com. This plan provides approximately 512 MB of RAM and 0.1 CPU, which may lead to occasional suboptimal performance. (Update: Now hosted on cyclic.sh for improved performance).
 
 Reviews Page:
-![Reviews page](./README1.png)
+![Reviews page](./reviews-page.png)
 
 Author: Ryan Freas
 

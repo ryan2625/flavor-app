@@ -1,6 +1,6 @@
 import image1 from "./stock1.jpg"
 import image2 from "./stock2.jpg"
-import image3 from "./stock3.avif"
+import image3 from "./stock3.jpg"
 
 /**
  * Data for the reviews presets. We use presets instead of custom reviews because the website does not have

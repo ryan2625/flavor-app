@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { GetQuote } from '../GetQuote';
 import { useCategories } from '../../contexts/categoriesContext';
 import '../../styles/flavorsCategory.css';
-import food1 from './food_1.avif';
-import food2 from './food_2.avif';
-import food3 from './food_3.avif';
+import food1 from './food_1.jpg';
+import food2 from './food_2.jpg';
+import food3 from './food_3.jpg';
 
 /**
  * FlavorsCategory Component

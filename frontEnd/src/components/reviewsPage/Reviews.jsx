@@ -32,7 +32,7 @@ export const Reviews = () => {
 
   useEffect(() => {
     const fetchReviews = async () => {
-      const response = await fetch("https://cute-cyan-duck-tie.cyclic.app/api/reviews");
+      const response = await fetch("https://mern-flavor-app.onrender.com/api/reviews");
       const json = await response.json();
       if (response.ok) {
         setReviews(json);

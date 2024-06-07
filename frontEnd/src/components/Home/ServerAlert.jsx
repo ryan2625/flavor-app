@@ -31,7 +31,7 @@ export const ServerAlert = ({closed, setCloseState}) => {
         </h1>
         <p>
             This site is hosted on cyclic.sh. Due to the nature of the service, performance issues may arise. Here is  <a href='https://www.cyclic.sh/pricing/' id="renderLink">cyclic's documentation</a> which can provide more information.
-            Thank you!
+            Thank you! 2024 Update: Now hosted on Render.com.
         </p>
     </div>
   )
